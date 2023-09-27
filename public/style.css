@@ -64,7 +64,7 @@ body {
 }
 
 .banner {
-    background-image: url(imagens/Rectangle\ 6.png);
+    background-image: url(assets/imagens/Rectangle\ 6.png);
     display: flex;
     background-repeat: no-repeat;
     background-size: cover;
@@ -116,7 +116,7 @@ P {
 
 
 .div_terceira {
-    background-image: url(imagens/Rectangle\ 20.png);
+    background-image: url(assets/imagens/Rectangle\ 20.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
