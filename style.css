@@ -1,0 +1,167 @@
+* {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    background-color: #fff;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h1 {
+    margin-left: 50px;
+    margin-top: 0px;
+}
+
+.header img{
+    width: 70px;
+    height: 70px;
+    margin-left: 60px;
+    margin-top: 10px;
+}
+
+.btn_navbar {
+    padding-right: 100px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn_navbar button {
+    background-color: #763A5A;
+    color: #fff;
+    border-radius: 50px;
+    margin: 10px;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.container {
+    background: #763A5A;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container ul {
+    width: 1500px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+}
+
+.container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.banner {
+    background-image: url(imagens/Rectangle\ 6.png);
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    justify-content: end;
+    align-items: center;
+
+}
+
+#banner_navbar {
+    padding-right: 150px;
+    padding-bottom: 300px;
+}
+
+.banner h1,
+P {
+    color: #fff;
+}
+
+.sobre {
+    background-color: #763A5A;
+    display: flex;
+   
+}
+
+#image_div_segundaria img{
+    width: 650px;
+    height: 350px;
+    padding: 50px 1px 50px 30px;
+}
+
+.sobre_nos{
+    
+    
+}
+
+#texto_nos {
+    padding-top: 20px;
+    padding-left: 45%;
+}
+
+#texto_sobre {
+    margin-top: 60px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+
+.div_terceira {
+    background-image: url(imagens/Rectangle\ 20.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;   
+    height: 100vh;
+    color: #fff;
+}
+
+#texto_missao {
+    font-size: 2px;
+    margin-top: 100px;
+    margin-left: 100px;
+    padding-right: 200px;
+    flex-direction: column;
+}
+
+#texto_nossa {
+    font-size: 20px;
+    
+    margin-right: 100px;
+}
+
+
+#terceira_missao{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div_quatro {
+    background-color: #763A5A;
+}
+
+#div_top_left {}
+
+#div_baixo_left {}
+
+#div_top_direita {}
+
+#div_baixo_direita {}
+
+.div_baixo {}
+
+#div_texto {}
+
+#div_inpus_email {}
+
+#btn_entrar_email {}
