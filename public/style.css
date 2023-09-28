@@ -113,36 +113,46 @@ P {
     padding-right: 20%;
 }
 
-
-.div_terceira {
-    background-image: url(assets/imagens/Rectangle\ 20.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 100vw;   
-    height: 100vh;
-    color: #fff;
-}
-
-#texto_missao {
-    font-size: 2px;
-    margin-top: 100px;
-    margin-left: 100px;
-    padding-right: 200px;
-    flex-direction: column;
-}
-
-#texto_nossa {
-    font-size: 20px;
-    
-    margin-right: 100px;
-}
-
-
-#terceira_missao{
+.container {
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+    margin: auto;
+}
+
+.social{
+    background-color: #e5e5e5;
+    display: flex;
+}
+
+.social .container{
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.box img{
+    width: 100px;
+}
+
+.social .container .boxes{
+display: flex;
+justify-content: space-between;
+}
+
+.box{
+    width: 280px;
+    height: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    margin: 10px 80px 10px 80px;
+    border-radius: 20px;
+}
+
+.box p{
+    text-align: center;
+    color: black;
 }
 
 .div_quatro {
