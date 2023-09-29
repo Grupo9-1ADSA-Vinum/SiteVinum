@@ -19,7 +19,7 @@
             <button onclick="btn_cadastrar()">Cadastrar-se</button>
         </div>
     </div>
-    <div class="container">
+    <div class="container1">
 
         <ul>
             <li><a href="">Home</a></li>
@@ -67,10 +67,11 @@
         </div>
     </div>
     <div class="social">
-        <div class="container">
+        <div class="container2">
             <div class="boxes">
                 <div class="box">
-                    <img src="assets/imagens/pngtree-world-and-clock-illustration-in-minimal-style-png-image_9999473.png">
+                    <img
+                        src="assets/imagens/pngtree-world-and-clock-illustration-in-minimal-style-png-image_9999473.png">
                     <h4>MISSÃO</h4>
                     <p>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil incidunt deserunt modi
@@ -79,7 +80,8 @@
                     </p>
                 </div>
                 <div class="box">
-                    <img src="assets/imagens/pngtree-light-bulb-with-jigsaw-illustration-in-minimal-style-png-image_10011889.png">
+                    <img
+                        src="assets/imagens/pngtree-light-bulb-with-jigsaw-illustration-in-minimal-style-png-image_10011889.png">
                     <h4>VISÃO</h4>
                     <p>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil incidunt deserunt modi
@@ -101,21 +103,26 @@
     </div>
 
     <div class="div_quatro">
-        <div id="div_top_left">
-            <h2>Cinta Gránee</h2>
+        <div class="container3">
+            <h2 class="titulo">V I N U M</h2>
+
+            Valor estimado dos vinhos produzidos:
+            <input type="text" id="inp_valor_vinho">
+
+            Quantidade de vinhos que estarão nas adegas:
+            <input type="text" id="inp_quantidade_vinho">
+
+            Quantidades de meses que contratará nosso serviço:
+            <input type="text" id="inp_tempo">
+
+            <button onclick="calcularSimulacao()">Calcular</button>
         </div>
-        <div id="div_baixo_left">
-            <img src="assets/imagens/image 1.png" alt="vinho">
+
+        <div id="calc_result">
         </div>
-        <div id="div_top_direita">
-            <h2>Descrição</h2>
-        </div>
-        <div id="div_baixo_direita">
-            <p>O vinho tinto italiano Cinta Montepulciano d’Abruzzo é um vinho produzido na região de Abruzzo, na
-                Itália, e é feito principalmente a partir da uva Montepulciano.
-                A uva Montepulciano é uma das variedades de uvas tintas mais cultivadas na Itália e produz vinhos
-                encorpados, ricos e intensos. É conhecida por seus sabores de frutas vermelhas maduras,
-                como cerejas e ameixas combinados com notas terrosas e especiarias.</p>
+
+        <div id="result_tier" class="container-tiers">
+
         </div>
     </div>
     <div class="div_baixo">
@@ -135,6 +142,138 @@
 </html>
 
 <script>
+    function calcularSimulacao() {
+
+var valorVinho = Number(inp_valor_vinho.value);
+var quantidadeVinhos = Number(inp_quantidade_vinho.value);;
+var tempoMeses = Number(inp_tempo.value);
+
+var valorAdega = 1000;
+var quantidadeVinhosNaAdega = 12;
+var porcentagemLucro = 2;
+var quantidadeAdegas = quantidadeVinhos / quantidadeVinhosNaAdega;
+
+var valorAdegaTotal = valorAdega * quantidadeAdegas;
+var valorLucro = valorAdegaTotal * porcentagemLucro;
+
+
+var tempo1 = 12;
+var tempo2 = 36;
+var tempo3 = 60;
+
+var desconto = 0;
+var descontoPerdido = 0;
+
+if (tempoMeses == tempo1) {
+    valorMensalidade = valorLucro / tempo1;
+    descontoPerdido = valorMensalidade * 0.1;
+} 
+
+if (tempoMeses == tempo2) {
+    var valorMensalidade = valorLucro / tempo2;
+    
+    descontoPerdido = valorMensalidade * 0.05;
+    desconto = valorMensalidade * 0.05;
+} 
+if (tempoMeses== tempo3 || tempoMeses>= tempo3) {
+    var valorMensalidade = valorLucro / tempo3;
+
+    desconto = valorMensalidade * 0.1;
+}
+
+valorMensalidade -= desconto;
+
+var qtdTier1 = 5;
+var qtdTier2 = 10;
+var qtdTier3 = 15;
+
+
+
+// Calculo para saber que tier o usuário se encaixa
+// Leva em consideração a quantidade de adegas que necessitará e se irá utilizar o controle de estoque.
+var pesoTier = quantidadeAdegas;
+var tierUsuario;
+
+if (pesoTier <= 50) {
+    tierUsuario = 'Vinum Miolo';                
+} else if (pesoTier > 50 && pesoTier <= 100) {
+    tierUsuario = 'Vinum Castilla';
+} else {
+    tierUsuario = 'Vinum Domaine';
+}
+
+// Calcular quanto deixou de perder
+var perda = 0.2; // Perda de 20%
+var perdaVinho = quantidadeVinhos * perda;
+var valorTotalVinho = quantidadeVinhos * valorVinho;
+var perdaTotal = perdaVinho * valorVinho;
+var valorPerdaTotal = valorTotalVinho - perdaTotal - (descontoPerdido * tempoMeses);
+var valorInvestimento = valorMensalidade * tempoMeses;
+
+// Formatar saída
+const formatarMoeda = new Intl.NumberFormat('pt-BR', {
+style: 'currency',
+    currency: 'BRL',
+});
+
+valorInvestimento = formatarMoeda.format(valorInvestimento);
+valorPerdaTotal = formatarMoeda.format(valorPerdaTotal);
+valorMensalidade = formatarMoeda.format(valorMensalidade);
+
+calc_result.innerHTML = `<br><div id="result" class="conteiner-result"></div>`;
+result.innerHTML =`<p>Investindo <b>${valorInvestimento}</b> ao todo, sua empresa deixará de ter uma perda significativa!! Iremos evitar a perda de, aproximadamente, <b>${valorPerdaTotal}</b>.</p>`;
+console.log(pesoTier);
+
+if (tierUsuario == 'Vinum Miolo') {
+    result_tier.innerHTML = `
+    <div class="container-tier">
+        <div class="container-info">
+            <span class="title-tier">Miolo</span>
+            <span class="description-tier"></span>Para aqueles que querem economizar</span>
+            <div class="container-price">
+                <span class="price">${valorMensalidade}</span>
+                <span class="by-month">por mês</span>
+            </div>
+            <button>Comprar</button>
+        </div>
+    </div>
+`;
+}
+
+if (tierUsuario == 'Vinum Castilla') {
+    result_tier.innerHTML = `
+    <div class="container-tier">
+        <div class="container-info">
+            <span class="title-tier">Castillo</span>
+            <span class="description-tier"></span>Para aqueles que querem economizar</span>
+            <div class="container-price">
+                <span class="price">${valorMensalidade}</span>
+                <span class="by-month">por mês</span>
+            </div>
+            <button>Comprar</button>
+        </div>
+    </div>
+`;
+    
+}
+
+if (tierUsuario == 'Vinum Domaine') {
+    result_tier.innerHTML = `
+    <div class="container-tier">
+        <div class="container-info">
+            <span class="title-tier">Domaine</span>
+            <span class="description-tier"></span>Para aqueles que querem economizar</span>
+            <div class="container-price">
+                <span class="price">${valorMensalidade}</span>
+                <span class="by-month">por mês</span>
+            </div>
+            <button>Comprar</button>
+        </div>
+    </div>
+`;
+
+}
+}
 
     function btn_login() {
 
