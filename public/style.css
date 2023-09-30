@@ -53,6 +53,7 @@ body {
 
 .container1 a {
     text-decoration: none;
+    color: #fff;
 }
 
 .banner {
@@ -151,12 +152,12 @@ justify-content: space-between;
 }
 
 .container1 {
-    max-width: 400px;
+    max-width: auto;
     padding: 20px;
-    border-radius: 5px;
     box-shadow: 0 0 10px #ccc;
     display: flex;
     flex-direction: column;
+    background-color: #763A5A;
 }
 
 .container2 {
@@ -270,6 +271,7 @@ button:hover {
        margin-top: 50px;
        display: flex;
        align-items: center;
+       text-align: center;
        justify-content: center;
        color: #ccc;
        font-size: 1.5rem;
