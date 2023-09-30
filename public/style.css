@@ -266,7 +266,7 @@ button:hover {
     font-size: 12px
    }
    
-   .conteiner-result {
+.conteiner-result {
        width: 100%;
        margin-top: 50px;
        display: flex;
@@ -275,23 +275,7 @@ button:hover {
        justify-content: center;
        color: #ccc;
        font-size: 1.5rem;
-   }
-
-#div_top_left {}
-
-#div_baixo_left {}
-
-#div_top_direita {}
-
-#div_baixo_direita {}
-
-.div_baixo {}
-
-#div_texto {}
-
-#div_inpus_email {}
-
-#btn_entrar_email {}
+}
 
 
 .inicio-footer {
@@ -427,4 +411,10 @@ h6 {
 
 .titulo-footer {
     margin-bottom: 5px;
+}
+
+
+.input-email button{
+    width: 80px;
+    height: 40px;
 }
