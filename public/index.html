@@ -19,16 +19,17 @@
             <button onclick="btn_cadastrar()">Cadastrar-se</button>
         </div>
     </div>
-    <div class="container1">
+    <div class="navbar">
+        <div class="container">
 
-        <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Sobre nós</a></li>
-            <li><a href="">Nossa Missão</a></li>
-            <li><a href="">Produtos</a></li>
-        </ul>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Sobre nós</a></li>
+                <li><a href="">Nossa Missão</a></li>
+                <li><a href="">Produtos</a></li>
+            </ul>
+        </div>
     </div>
-
     <div class="banner">
         <div id="banner_navbar">
             <h1>Deixe seu vinho conosco</h1>
@@ -67,7 +68,7 @@
         </div>
     </div>
     <div class="social">
-        <div class="container2">
+        <div class="container">
             <div class="boxes">
                 <div class="box">
                     <img
@@ -103,7 +104,7 @@
     </div>
 
     <div class="div_quatro">
-        <div class="container3">
+        <div class="container">
             <h2 class="titulo">V I N U M</h2>
 
             Valor estimado dos vinhos produzidos:
@@ -138,7 +139,7 @@
     </div>
 
     <div class="footer">
-        
+
         <div class="footer1">
             <div class="bloco">
                 <img src="assets/imgs/icons8-location-pin-48 1.png">
@@ -147,7 +148,7 @@
                     <h6>Rua Haddock Lobo, 595 São Paulo - SP</h6>
                 </div>
             </div>
-    
+
             <div class="bloco">
                 <img src="assets/imgs/icons8-phone-48 1.png">
                 <div class="texto">
@@ -155,7 +156,7 @@
                     <h6>(11) 3589-4043</h6>
                 </div>
             </div>
-    
+
             <div class="bloco">
                 <img src="assets/imgs/icons8-email-48 1.png">
                 <div class="texto">
@@ -164,7 +165,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="pai-linha">
             <div class="linha1">
                 <div class="footer2">
@@ -175,7 +176,7 @@
                             <h6>soluções para a sua adega</h6>
                         </div>
                     </div>
-        
+
                     <div class="redes">
                         <h5 class="titulo-footer">Nos siga!</h5>
                         <div class="imagens">
@@ -196,88 +197,89 @@
 <script>
     function calcularSimulacao() {
 
-var valorVinho = Number(inp_valor_vinho.value);
-var quantidadeVinhos = Number(inp_quantidade_vinho.value);;
-var tempoMeses = Number(inp_tempo.value);
+        var valorVinho = Number(inp_valor_vinho.value);
+        var quantidadeVinhos = Number(inp_quantidade_vinho.value);;
+        var tempoMeses = Number(inp_tempo.value);
 
-var valorAdega = 1000;
-var quantidadeVinhosNaAdega = 12;
-var porcentagemLucro = 2;
-var quantidadeAdegas = quantidadeVinhos / quantidadeVinhosNaAdega;
+        var valorAdega = 1000;
+        var quantidadeVinhosNaAdega = 12;
+        var porcentagemLucro = 2;
+        var quantidadeAdegas = quantidadeVinhos / quantidadeVinhosNaAdega;
 
-var valorAdegaTotal = valorAdega * quantidadeAdegas;
-var valorLucro = valorAdegaTotal * porcentagemLucro;
-
-
-var tempo1 = 12;
-var tempo2 = 36;
-var tempo3 = 60;
-
-var desconto = 0;
-var descontoPerdido = 0;
-
-if (tempoMeses == tempo1) {
-    valorMensalidade = valorLucro / tempo1;
-    descontoPerdido = valorMensalidade * 0.1;
-} 
-
-if (tempoMeses == tempo2) {
-    var valorMensalidade = valorLucro / tempo2;
-    
-    descontoPerdido = valorMensalidade * 0.05;
-    desconto = valorMensalidade * 0.05;
-} 
-if (tempoMeses== tempo3 || tempoMeses>= tempo3) {
-    var valorMensalidade = valorLucro / tempo3;
-
-    desconto = valorMensalidade * 0.1;
-}
-
-valorMensalidade -= desconto;
-
-var qtdTier1 = 5;
-var qtdTier2 = 10;
-var qtdTier3 = 15;
+        var valorAdegaTotal = valorAdega * quantidadeAdegas;
+        var valorLucro = valorAdegaTotal * porcentagemLucro;
 
 
+        var tempo1 = 12;
+        var tempo2 = 36;
+        var tempo3 = 60;
 
-// Calculo para saber que tier o usuário se encaixa
-// Leva em consideração a quantidade de adegas que necessitará e se irá utilizar o controle de estoque.
-var pesoTier = quantidadeAdegas;
-var tierUsuario;
+        var desconto = 0;
+        var descontoPerdido = 0;
 
-if (pesoTier <= 50) {
-    tierUsuario = 'Vinum Miolo';                
-} else if (pesoTier > 50 && pesoTier <= 100) {
-    tierUsuario = 'Vinum Castilla';
-} else {
-    tierUsuario = 'Vinum Domaine';
-}
 
-// Calcular quanto deixou de perder
-var perda = 0.2; // Perda de 20%
-var perdaVinho = quantidadeVinhos * perda;
-var valorTotalVinho = quantidadeVinhos * valorVinho;
-var perdaTotal = perdaVinho * valorVinho;
-var valorPerdaTotal = valorTotalVinho - perdaTotal - (descontoPerdido * tempoMeses);
-var valorInvestimento = valorMensalidade * tempoMeses;
+        
+        if (tempoMeses <= tempo1) {
+            valorMensalidade = valorLucro / tempo1;
+            descontoPerdido = valorMensalidade * 0.1;
+        }
 
-// Formatar saída
-const formatarMoeda = new Intl.NumberFormat('pt-BR', {
-style: 'currency',
-    currency: 'BRL',
-});
+        if (tempoMeses <= tempo2) {
+            var valorMensalidade = valorLucro / tempo2;
 
-valorInvestimento = formatarMoeda.format(valorInvestimento);
-valorPerdaTotal = formatarMoeda.format(valorPerdaTotal);
-valorMensalidade = formatarMoeda.format(valorMensalidade);
+            descontoPerdido = valorMensalidade * 0.05;
+            desconto = valorMensalidade * 0.05;
+        }
+        if (tempoMeses >= tempo3) {
+            valorMensalidade = valorLucro / tempo3;
+            desconto = valorMensalidade * 0.1;
+        }
 
-calc_result.innerHTML = `<br><div id="result" class="conteiner-result"></div>`;
-result.innerHTML =`<p>Investindo <b>${valorInvestimento}</b> ao todo, sua empresa deixará de ter uma perda significativa!! Iremos evitar a perda de, aproximadamente, <b>${valorPerdaTotal}</b>.</p>`;
-console.log(pesoTier);
+        valorMensalidade -= desconto;
 
-if (tierUsuario == 'Vinum Miolo') {
-    result_tier.innerHTML = `
+        var qtdTier1 = 5;
+        var qtdTier2 = 10;
+        var qtdTier3 = 15;
+
+
+
+        // Calculo para saber que tier o usuário se encaixa
+        // Leva em consideração a quantidade de adegas que necessitará e se irá utilizar o controle de estoque.
+        var pesoTier = quantidadeAdegas;
+        var tierUsuario;
+
+        if (pesoTier <= 50) {
+            tierUsuario = 'Vinum Miolo';
+        } else if (pesoTier > 50 && pesoTier <= 100) {
+            tierUsuario = 'Vinum Castilla';
+        } else {
+            tierUsuario = 'Vinum Domaine';
+        }
+
+        // Calcular quanto deixou de perder
+        var perda = 0.2; // Perda de 20%
+        var perdaVinho = quantidadeVinhos * perda;
+        var valorTotalVinho = quantidadeVinhos * valorVinho;
+        var perdaTotal = perdaVinho * valorVinho;
+        var valorPerdaTotal = valorTotalVinho - perdaTotal - (descontoPerdido * tempoMeses);
+        var valorInvestimento = valorMensalidade * tempoMeses;
+
+        // Formatar saída
+        const formatarMoeda = new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+        });
+
+        valorInvestimento = formatarMoeda.format(valorInvestimento);
+        valorPerdaTotal = formatarMoeda.format(valorPerdaTotal);
+        valorMensalidade = formatarMoeda.format(valorMensalidade);
+
+        calc_result.innerHTML = `<br><div id="result" class="conteiner-result"></div>`;
+        result.innerHTML = `<p>Investindo <b>${valorInvestimento}</b> ao todo, sua empresa deixará de ter uma perda significativa!! Iremos evitar a perda de, aproximadamente, <b>${valorPerdaTotal}</b>.</p>`;
+        console.log(pesoTier);
+
+        if (tierUsuario == 'Vinum Miolo') {
+            result_tier.innerHTML = `
     <div class="container-tier">
         <div class="container-info">
             <span class="title-tier">Miolo</span>
@@ -290,10 +292,10 @@ if (tierUsuario == 'Vinum Miolo') {
         </div>
     </div>
 `;
-}
+        }
 
-if (tierUsuario == 'Vinum Castilla') {
-    result_tier.innerHTML = `
+        if (tierUsuario == 'Vinum Castilla') {
+            result_tier.innerHTML = `
     <div class="container-tier">
         <div class="container-info">
             <span class="title-tier">Castillo</span>
@@ -306,11 +308,11 @@ if (tierUsuario == 'Vinum Castilla') {
         </div>
     </div>
 `;
-    
-}
 
-if (tierUsuario == 'Vinum Domaine') {
-    result_tier.innerHTML = `
+        }
+
+        if (tierUsuario == 'Vinum Domaine') {
+            result_tier.innerHTML = `
     <div class="container-tier">
         <div class="container-info">
             <span class="title-tier">Domaine</span>
@@ -324,8 +326,8 @@ if (tierUsuario == 'Vinum Domaine') {
     </div>
 `;
 
-}
-}
+        }
+    }
 
     function btn_login() {
 

@@ -4,6 +4,7 @@
 
 body {
     margin: 0;
+    scroll-padding-top: 1.25rem;
 }
 
 .header {
@@ -18,7 +19,7 @@ body {
     margin-top: 0px;
 }
 
-.header img{
+.header img {
     width: 70px;
     height: 70px;
     margin-left: 60px;
@@ -41,9 +42,16 @@ body {
     font-size: 20px;
 }
 
+.navbar .container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #763A5A;
+    height: 50px;
+}
 
 
-.container1 ul {
+.container ul {
     width: 100%;
     list-style: none;
     display: flex;
@@ -51,7 +59,7 @@ body {
     font-weight: bold;
 }
 
-.container1 a {
+.container a {
     text-decoration: none;
     color: #fff;
 }
@@ -81,19 +89,15 @@ P {
 .sobre {
     background-color: #763A5A;
     display: flex;
-   
+
 }
 
-#image_div_segundaria img{
+#image_div_segundaria img {
     width: 650px;
     height: 350px;
     padding: 50px 1px 50px 30px;
 }
 
-.sobre_nos{
-    
-    
-}
 
 #texto_nos {
     padding-top: 20px;
@@ -106,28 +110,26 @@ P {
     padding-right: 20%;
 }
 
-
-
-.social{
+.social {
     background-color: #e5e5e5;
     display: flex;
 }
 
-.social .container2{
+.social .container {
     justify-content: center;
     margin-top: 20px;
 }
 
-.box img{
+.box img {
     width: 100px;
 }
 
-.social .container2 .boxes{
-display: flex;
-justify-content: space-between;
+.social .container .boxes {
+    display: flex;
+    justify-content: space-between;
 }
 
-.box{
+.box {
     width: 280px;
     height: 300px;
     background-color: white;
@@ -139,7 +141,7 @@ justify-content: space-between;
     border-radius: 20px;
 }
 
-.box p{
+.box p {
     text-align: center;
     color: black;
 }
@@ -147,26 +149,12 @@ justify-content: space-between;
 .div_quatro {
     display: flex;
     padding: 20px;
-    margin-top: 50px;
+    margin-top: 20px;
     background-color: #763A5A;
 }
 
-.container1 {
-    max-width: auto;
-    padding: 20px;
-    box-shadow: 0 0 10px #ccc;
-    display: flex;
-    flex-direction: column;
-    background-color: #763A5A;
-}
 
-.container2 {
-    display: flex;
-    width: 100%;
-    margin: auto;
-}
-
-.container3 {
+.div_quatro .container {
     background-color: whitesmoke;
     max-width: 400px;
     margin: 10px 50px 10px 100px;
@@ -211,16 +199,16 @@ button:hover {
     justify-content: center;
     gap: 2rem;
     margin-top: 1%;
-   }
-   
-   .container-info {
+}
+
+.container-info {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-   }
-   
-   .container-tier {
+}
+
+.container-tier {
     width: fit-content;
     display: flex;
     flex-direction: column;
@@ -231,56 +219,62 @@ button:hover {
     padding: 0.5rem 1rem;
     background-color: whitesmoke;
     color: #000;
-   }
-   
-   .container-tier button {
-       background-color: #763A5A;
-       color: #ccc;
-       font-weight: bold;
-       font-size: 20px;
-   }
-   
-   .tier {
-    display: flex; flex-direction: column; align-items: center;
-   }
-   
-   .title-tier {
+}
+
+*/ .container-tier button {
+    background-color: #763A5A;
+    color: #ccc;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.tier {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-tier {
     font-size: 24px;
     font-weight: bold;
-   }
-   
-   .description-tier {
+}
+
+.description-tier {
     font-size: 14px;
     color: gray;
-   }
-   
-   .container-price {
-    display: flex; flex-direction: column; align-items: center;
-   }
-   
-   .price {
-    font-size: 48px; font-weight: bold;
-   }
-   
-   .by-month {
+}
+
+.container-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.price {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.by-month {
     font-size: 12px
-   }
-   
+}
+
 .conteiner-result {
-       width: 100%;
-       margin-top: 50px;
-       display: flex;
-       align-items: center;
-       text-align: center;
-       justify-content: center;
-       color: #ccc;
-       font-size: 1.5rem;
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #ccc;
+    font-size: 1.5rem;
 }
 
 
 .inicio-footer {
     display: flex;
     justify-content: center;
+    margin-top: 5px;
 }
 
 .input-email {
@@ -325,6 +319,7 @@ button:hover {
     flex-direction: column;
     justify-content: center;
     padding: 16px 0;
+    
 }
 
 .footer h6 {
@@ -414,7 +409,7 @@ h6 {
 }
 
 
-.input-email button{
+.input-email button {
     width: 80px;
     height: 40px;
 }
