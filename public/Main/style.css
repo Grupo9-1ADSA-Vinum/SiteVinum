@@ -368,7 +368,6 @@ button:hover {
 .footer {
     background-color: #763A5A;
     color: white;
-    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
