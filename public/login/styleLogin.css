@@ -6,14 +6,13 @@ body {
     margin: 0;
 }
 .banner{
-background-image: url(imagens/wine.jpg);
-background-size: cover;
-display: flex;
-width: 100%;
-height: 100vh;
-justify-content: start;
-align-items: center;
-background-repeat: no-repeat;
+    background-image: url(imagens/wine.jpg);
+    background-size: cover;
+    display: flex;
+    width: 100%;
+    height: 68vh;
+    justify-content: start;
+    background-repeat: no-repeat;
 }
 
 #banner_navbar {
@@ -76,13 +75,13 @@ h2 {
     border-radius: 4px;
 }
 .login {
+    margin-top: 70px;
     display: flex;
     justify-content: center;
     background-color: rgb(125, 74, 101);
     width: 500px;
     height: 380px;
-    margin-right: 50px;
-    margin-left: 50px;
+    margin-left: 150px;
     border-radius: 15px;
 }
 .formulario span {
