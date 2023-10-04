@@ -1,0 +1,96 @@
+
+body {
+    margin: 0;
+}
+.banner{
+background-image: url(imagens/wine.jpg);
+background-size: cover;
+display: flex;
+width: 100%;
+height: 100vh;
+justify-content: start;
+align-items: center;
+background-repeat: no-repeat;
+}
+
+#banner_navbar {
+    margin-left: 300px;
+    padding-right: 15%;
+    padding-top: 10%;
+}
+#banner_navbar p{
+    font-size: 25px;
+}
+
+.banner p {
+    font-weight: 450;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+}
+.banner h1 {
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: 800;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.card {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 30%;
+}
+
+.card h2 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+h2 {
+    font-weight: 800;
+}
+.formulario {
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    align-self: center;
+}
+.botao {
+    color: #fff;
+    background-color: #763A5A;
+    cursor: pointer;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 19px;
+    width: 120px;
+    height: 40px;
+    align-self: center;
+    border-width: 0px;
+    border-radius: 4px;
+}
+.login {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(125, 74, 101);
+    width: 500px;
+    height: 380px;
+    margin-right: 50px;
+    margin-left: 50px;
+    border-radius: 15px;
+}
+.formulario span {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.formulario .campo input {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}

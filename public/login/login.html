@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinum</title>
+    <link rel="stylesheet" href="styleLogin.css">
+</head>
+
+    </div>
+    <div class="banner">
+        <div class="login">
+        
+            <div class="card">
+                <h2>
+                    Login
+                 </h2>
+                    <div class="formulario" >
+                        <div class="campo">
+                            <span>
+                                Email:
+                            </span>
+                            <input type="email" id="input_email">
+                        </div>
+                        <div class="campo">
+                            <span>
+                                Senha:
+                            </span>
+                            <input type="password" id="input_senha">
+                        </div>
+                        <button class="botao" onclick="entrar()">Entrar</button></a>
+                    </div>
+            </div>
+
+    </div>
+        <div id="banner_navbar">
+            <h1>Deixe seu vinho conosco</h1>
+            <p> Seu vinho, nosso compromisso</p>
+        </div>
+    </div>
+ </body>
+ <script>
+    function entrar(){
+        var email = input_email.value;
+        var senha = input_senha.value;
+        if(senha == "123" && email.indexOf("@sptech.school")> -1){
+            window.location.href = "test.html";
+        }
+        else{
+      alert('Senha ou email inválidos')
+  }
+}
+    
+ </script>

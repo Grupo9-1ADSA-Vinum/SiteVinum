@@ -15,22 +15,22 @@
             <h1>Vinum</h1>
         </div>
         <div class="btn_navbar">
-            <button onclick="btn_login()">Login</button><br>
-            <button onclick="btn_cadastrar()">Cadastrar-se</button>
+            <button onclick="btn_login()"><a href="login/login.html">Login</a></button><br>
+            <button onclick="btn_cadastrar()"><a href="cadastro/cadastro.html">Cadastrar-se</a></button>
         </div>
     </div>
     <div class="navbar">
         <div class="container">
 
             <ul>
-                <a><li>Home</li></a>
-                <a><li>Sobre nós</li></a>
-                <a><li>Nossa Missão</li></a>
-                <a><li>Produtos</li></a>
+                <a href="#home"><li>Home</li></a>
+                <a href="#sobreNos"><li>Sobre nós</li></a>
+                <a href="#nossaMissao"><li>Nossa Missão</li></a>
+                <a href="#calculadora"><li>Calculadora Financeira</li></a>
             </ul>
         </div>
     </div>
-    <div class="banner">
+    <div class="banner" id="home">
         <div id="banner_navbar">
             <h1>Deixe seu vinho conosco</h1>
             <p>Deixe de perder dinheiro e armazene o<br> seu vinho com qualidade!</p>
@@ -40,7 +40,7 @@
         <div id="image_div_segundaria">
             <img src="assets/imagens/Rectangle 10.png" alt="">
         </div>
-        <div class="sobre_nos">
+        <div class="sobre_nos" id="sobreNos">
             <div id="texto_nos">
                 <h2>Sobre nós</h2>
             </div>
@@ -67,9 +67,9 @@
             </div>
         </div>
     </div>
-    <div class="social">
+    <div class="social" id="nossaMissao">
         <div class="container">
-            <div class="boxes">
+            <div class="boxes" >
                 <div class="box">
                     <img
                         src="assets/imagens/pngtree-world-and-clock-illustration-in-minimal-style-png-image_9999473.png">
@@ -103,9 +103,9 @@
         </div>
     </div>
 
-    <div class="div_quatro">
+    <div class="div_quatro" id="calculadora">
         <div class="container">
-            <h2 class="titulo">V I N U M</h2>
+            <h2 class="titulo" >V I N U M</h2>
 
             Valor estimado dos vinhos produzidos:
             <input type="text" id="inp_valor_vinho">
@@ -330,7 +330,7 @@
     }
 
     function btn_login() {
-
+        
     }
 
     function btn_cadastrar() {
