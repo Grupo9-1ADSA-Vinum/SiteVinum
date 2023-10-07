@@ -11,7 +11,7 @@
 <body>
     <div class="header">
         <div class="isolada">
-            <img src="../assets/imagens/icons8-wine-glass-64(1) 1.png" alt="">
+            <img src="../assets/imagens/icons8-wine-glass-64(1) 1.png">
             <h1>Vinum</h1>
         </div>
         <div class="btn_navbar">
@@ -23,21 +23,31 @@
         <div class="container">
 
             <ul>
-                <a href="#home"><li>Home</li></a>
-                <a href="#sobreNos"><li>Sobre nós</li></a>
-                <a href="#nossaMissao"><li>Nossa Missão</li></a>
-                <a href="#suporte"><li>suporte</li></a>
-                <a href="#calculadora"><li>Calculadora Financeira</li></a>
+                <a href="#home">
+                    <li>Home</li>
+                </a>
+                <a href="#sobreNos">
+                    <li>Sobre nós</li>
+                </a>
+                <a href="#nossaMissao">
+                    <li>Nossa Missão</li>
+                </a>
+                <a href="#suporte">
+                    <li>suporte</li>
+                </a>
+                <a href="#calculadora">
+                    <li>Calculadora Financeira</li>
+                </a>
             </ul>
         </div>
     </div>
     <div class="banner" id="home">
         <div class="gradient">
-        <div id="banner_navbar">
-            <h1>Deixe seu vinho conosco</h1>
-            <p>Deixe de perder dinheiro e armazene o<br> seu vinho com qualidade!</p>
+            <div id="banner_navbar">
+                <h1>Deixe seu vinho conosco</h1>
+                <p>Deixe de perder dinheiro e armazene o<br> seu vinho com qualidade!</p>
+            </div>
         </div>
-    </div>
     </div>
     <div class="sobre">
         <div id="image_div_segundaria">
@@ -72,7 +82,7 @@
     </div>
     <div class="social" id="nossaMissao">
         <div class="container">
-            <div class="boxes" >
+            <div class="boxes">
                 <div class="box">
                     <img
                         src="../assets/imagens/pngtree-world-and-clock-illustration-in-minimal-style-png-image_9999473.png">
@@ -108,26 +118,37 @@
 
     <div class="div_quatro" id="calculadora">
         <div class="container">
-            <h2 class="titulo" >V I N U M</h2>
+            <h2 class="titulo">V I N U M</h2>
 
-            Valor estimado dos vinhos produzidos:
+            <p>Valor estimado dos vinhos produzidos:</p>
             <input type="text" id="inp_valor_vinho">
 
-            Quantidade de vinhos que estarão nas adegas:
+            <p>Quantidade de vinhos que estarão nas adegas:</p>
             <input type="text" id="inp_quantidade_vinho">
 
-            Quantidades de meses que contratará nosso serviço:
-            <input type="text" id="inp_tempo">
+            <p>Quantidades de meses que contratará nosso serviço:</p>
+            <!-- <input type="text" id="inp_tempo">  -->
+            <div class="checkboxes">
+                <input type="radio" id="input_miolo" name="miolo" value="sim">
+                <label for="input_miolo">12 Meses</label>
+                <input type="radio" id="input_castilla" name="castilla" value="sim">
+                <label for="input_castilla">36 Meses</label>
+                <input type="radio" id="input_domaine" name="domaine" value="sim">
+                <label for="input_domaine">60 Meses</label>
+    
+            </div>
 
-            <button onclick="calcularSimulacao()">Calcular</button>
+            <button class="btn-second" onclick="calcularSimulacao()">Calcular</button>
         </div>
 
-        <div id="calc_result">
+        <div class="container_calc">
+            <div id="result_tier" class="container-tiers">
+                <div id="calc_result">
+                </div>
+            </div>
+
         </div>
 
-        <div id="result_tier" class="container-tiers">
-
-        </div>
     </div>
     <div class="inicio-footer">
         <div class="linha">
@@ -198,11 +219,19 @@
 </html>
 
 <script>
+    
     function calcularSimulacao() {
 
         var valorVinho = Number(inp_valor_vinho.value);
         var quantidadeVinhos = Number(inp_quantidade_vinho.value);;
-        var tempoMeses = Number(inp_tempo.value);
+        // var tempoMeses = Number(input_tempo.value);
+        const Miolo = document.querySelector('#input_miolo:checked') !== null;
+        console.log(Miolo); 
+        const Castilla= document.querySelector('#input_castilla:checked') !== null;
+        console.log(Castilla); 
+        const Domaine = document.querySelector('#input_domaine:checked') !== null;
+        console.log(Domaine); 
+
 
         var valorAdega = 1000;
         var quantidadeVinhosNaAdega = 12;
@@ -221,7 +250,7 @@
         var descontoPerdido = 0;
 
 
-        
+
         if (tempoMeses <= tempo1) {
             valorMensalidade = valorLucro / tempo1;
             descontoPerdido = valorMensalidade * 0.1;
@@ -277,9 +306,9 @@
         valorPerdaTotal = formatarMoeda.format(valorPerdaTotal);
         valorMensalidade = formatarMoeda.format(valorMensalidade);
 
-        calc_result.innerHTML = `<br><div id="result" class="conteiner-result"></div>`;
-        result.innerHTML = `<p>Investindo <b>${valorInvestimento}</b> ao todo, sua empresa deixará de ter uma perda significativa!! Iremos evitar a perda de, aproximadamente, <b>${valorPerdaTotal}</b>.</p>`;
-        console.log(pesoTier);
+        // calc_result.innerHTML = `<br><div id="result" class="conteiner-result"></div>`;
+        // result.innerHTML = `<p>Investindo <b>${valorInvestimento}</b> ao todo, sua empresa deixará de ter uma perda significativa!! Iremos evitar a perda de, aproximadamente, <b>${valorPerdaTotal}</b>.</p>`;
+        // console.log(pesoTier);
 
         if (tierUsuario == 'Vinum Miolo') {
             result_tier.innerHTML = `
@@ -292,6 +321,8 @@
                 <span class="by-month">por mês</span>
             </div>
             <button>Comprar</button>
+            <p>Investindo <b>${valorInvestimento}</b> ao todo, sua empresa deixará de ter uma perda significativa!! Iremos evitar a perda de, aproximadamente, <b>${valorPerdaTotal}</b>.</p>
+            <br><div id="result" class="conteiner-result"></div>
         </div>
     </div>
 `;
@@ -333,7 +364,7 @@
     }
 
     function btn_login() {
-        
+
     }
 
     function btn_cadastrar() {

@@ -37,6 +37,7 @@ body {
 
 .btn_navbar button {
     background-color: #763A5A;
+    border: none;
     color: #fff;
     border-radius: 50px;
     margin: 10px;
@@ -178,9 +179,7 @@ P {
 
 .social .container .boxes {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-left: 50px;
 }
 
 .box {
@@ -206,20 +205,130 @@ P {
     margin-top: 20px;
     background-color: #763A5A;
 }
-
+.div_quatro .checkboxes{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+.div_quatro .checkboxes label{
+    margin-top: 5px;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
 .div_quatro .container {
     background-color: whitesmoke;
-    max-width: 400px;
+    width: 400px;
     margin: 10px 50px 10px 100px;
     padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 40px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 10px #000;
 }
+.div_quatro .container h2{
+    text-align: center;
+}
+.div_quatro .container p{
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 370;
+    color: #000;
+}
+.div_quatro .container_calc {
+    justify-content: center;
+    align-items: center;
+    background-color: #763A5A;
+    width: 400px;
+    margin: 10px 120px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.div_quatro .container_calc p {
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    font-weight: 370;
+    font-size: 20px;
+    color: #5d2d47;
+}
+.div_quatro .container .btn-second{
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    border-radius: 15px;
+    text-transform: uppercase;
+    font-size: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    height: 30px;
+    align-self: center;
+    border: none;
+    margin-top: 1rem;
+}
+.div_quatro .container .btn-second:hover{
+    background-color: #fff;
+    border: 1px solid #763A5A;
+    color: #763A5A;
+}
 
+.div_quatro .container input{
+    outline: none;
+    height: 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ccc;
+
+}
+.btn {
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    height: 30px;
+    align-self: center;
+    border: none;
+    margin-top: 1rem;
+}
+.div_quatro .container_calc button{
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    border-radius: 15px;
+    text-transform: uppercase;
+    font-size: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    height: 30px;
+    align-self: center;
+    border: none;
+    margin-top: 1rem;
+}
+.btn-primary {
+    background-color: transparent;
+    border: 1px solid #fff;
+    transition: background-color .5s;
+}
+.btn-primary:hover {
+    background-color: #fff;
+    color: #763A5A;
+}
+.btn-second {
+    background-color: #763A5A;
+    border: 1px solid #763A5A;
+    transition: background-color .5s;
+}
+.btn-second:hover {
+    background-color: #fff;
+    border: 1px solid #763A5A;
+    color: #763A5A;
+}
 input[type="text"] {
     background-color: #ad869b;
     width: 90%;
@@ -230,7 +339,7 @@ input[type="text"] {
     height: 20px;
 }
 
-button {
+/* button {
     background-color: #763A5A;
     color: #fff;
     padding: 10px 20px;
@@ -240,7 +349,7 @@ button {
     align-self: center;
     width: 250px;
     margin: 15px;
-}
+} */
 
 button:hover {
     background-color: #5d2d47;
@@ -263,12 +372,15 @@ button:hover {
 }
 
 .container-tier {
-    width: fit-content;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    font-weight: 500;
+    height: 80%;
+    width: 80%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 20px;
     box-shadow: 0 0 10px #000;
     padding: 0.5rem 1rem;
     background-color: whitesmoke;
@@ -363,6 +475,9 @@ button:hover {
 .fique-dentro h2 {
     font-family: Arial, Helvetica, sans-serif;
     margin-left: 8px;
+}
+.linha .fique-dentro button {
+    
 }
 
 .footer {

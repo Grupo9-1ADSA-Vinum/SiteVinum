@@ -1,24 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinum</title>
-    <link rel="stylesheet" href="styleLogin.css">
-    
-    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 </head>
 <body>
     <div class="header">
         <div class="isolada">
-            <img src="imagens/icons8-wine-glass-64(1) 1.png" alt="">
+            <img src="../assets/imagens/icons8-wine-glass-64(1) 1.png" alt="">
             <h1>Vinum</h1>
         </div>
-        
         <div class="btn_navbar">
-            <img id="img_user" src="imgs/user-128.png">
-            <button onclick="btn_cadastrar()"><a href="../cadastro/cadastro.html">Cadastrar-se</a></button>
             
         </div>
     </div>
@@ -26,41 +23,42 @@
 
         <ul>
             <a href="../Main/index.html"><li>Home</li></a>
-            <a href=""><li>Calendario</li></a>
+            <a href="../Main/index.html"><li>Sobre nós</li></a>
             <a href="#suporte"><li>Suporte</li></a>
             <a href=""><li>Produtos</li></a>
         </ul>
     </div>
     </div>
-    <div class="banner">
-        <div class="login">
-        
-            <div class="card">
-                <h2>
-                    Login
-                 </h2>
-                    <div class="formulario" >
-                        <div class="campo">
-                            <span>
-                                Email:
-                            </span>
-                            <input type="email" id="input_email">
-                        </div>
-                        <div class="campo">
-                            <span>
-                                Senha:
-                            </span>
-                            <input type="password" id="input_senha">
-                        </div>
-                        <button class="botao" onclick="entrar()">Entrar</button></a>
-                    </div>
+    <div class="container">
+        <div class="content first-content">
+            <div class="first-column">
+                <h2 class="title title-primary">Bem vindo de volta!</h2>
+                <p class="description description-primary">Caso não tenha uma conta</p>
+                <p class="description description-primary">clique aqui</p>
+                <button id="signin" class="btn btn-primary"><a href="../cadastro/cadastro.html">Cadastro</a></button>
             </div>
 
-    </div>
-        <div id="banner_navbar">
-            <h1>Deixe seu vinho conosco</h1>
-            <p> Seu vinho, nosso compromisso</p>
-        </div>
+            <div class="second-column">
+                <h2 class="title title-second">Login</h2>
+                <div class="social-media">
+                </div>
+                <form class="form">
+                    <label class="label-input" for="">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input type="email" placeholder="Email">
+                    </label>
+
+                    <label class="label-input" for="">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" placeholder="Senha">
+                    </label>
+
+                    <button class="btn btn-second">login</button>
+                </form>
+            </div>
+             </div>
+             
+            </div>
     </div>
 
     <div class="footer" id="suporte">
@@ -113,18 +111,6 @@
             </div>
         </div>
     </div>
- </body>
- </html>
- <script>
-    function entrar(){
-        var email = input_email.value;
-        var senha = input_senha.value;
-        if(senha == "123" && email.indexOf("@sptech.school")> -1){
-            window.location.href = "test.html";
-        }
-        else{
-      alert('Senha ou email inválidos')
-  }
-}
-    
- </script>
+</body>
+
+</html>
