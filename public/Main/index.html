@@ -129,13 +129,13 @@
             <p>Quantidades de meses que contratará nosso serviço:</p>
             <!-- <input type="text" id="inp_tempo">  -->
             <div class="checkboxes">
-                <input type="radio" id="input_miolo" name="miolo" value="sim">
+                <input type="radio" id="input_miolo" name="plano" value="12">
                 <label for="input_miolo">12 Meses</label>
-                <input type="radio" id="input_castilla" name="castilla" value="sim">
+                <input type="radio" id="input_castilla" name="plano" value="36">
                 <label for="input_castilla">36 Meses</label>
-                <input type="radio" id="input_domaine" name="domaine" value="sim">
+                <input type="radio" id="input_domaine" name="plano" value="60">
                 <label for="input_domaine">60 Meses</label>
-    
+
             </div>
 
             <button class="btn-second" onclick="calcularSimulacao()">Calcular</button>
@@ -219,18 +219,17 @@
 </html>
 
 <script>
-    
+
     function calcularSimulacao() {
 
         var valorVinho = Number(inp_valor_vinho.value);
         var quantidadeVinhos = Number(inp_quantidade_vinho.value);;
-        // var tempoMeses = Number(input_tempo.value);
         const Miolo = document.querySelector('#input_miolo:checked') !== null;
-        console.log(Miolo); 
-        const Castilla= document.querySelector('#input_castilla:checked') !== null;
-        console.log(Castilla); 
+        console.log(Miolo);
+        const Castilla = document.querySelector('#input_castilla:checked') !== null;
+        console.log(Castilla);
         const Domaine = document.querySelector('#input_domaine:checked') !== null;
-        console.log(Domaine); 
+        console.log(Domaine);
 
 
         var valorAdega = 1000;
@@ -251,18 +250,18 @@
 
 
 
-        if (tempoMeses <= tempo1) {
+        if (Miolo == true) {
             valorMensalidade = valorLucro / tempo1;
             descontoPerdido = valorMensalidade * 0.1;
         }
 
-        if (tempoMeses <= tempo2) {
+        if (Castilla == true) {
             var valorMensalidade = valorLucro / tempo2;
 
             descontoPerdido = valorMensalidade * 0.05;
             desconto = valorMensalidade * 0.05;
         }
-        if (tempoMeses >= tempo3) {
+        if (Domaine == true) {
             valorMensalidade = valorLucro / tempo3;
             desconto = valorMensalidade * 0.1;
         }
@@ -287,7 +286,15 @@
         } else {
             tierUsuario = 'Vinum Domaine';
         }
-
+        if (Miolo == true) {
+            var tempoMeses = 12;
+        }
+        if (Castilla == true) {
+            var tempoMeses = 36;
+        }
+        if (Domaine == true) {
+            var tempoMeses = 60;
+        }
         // Calcular quanto deixou de perder
         var perda = 0.2; // Perda de 20%
         var perdaVinho = quantidadeVinhos * perda;
@@ -339,6 +346,8 @@
                 <span class="by-month">por mês</span>
             </div>
             <button>Comprar</button>
+            <p>Investindo <b>${valorInvestimento}</b> ao todo, sua empresa deixará de ter uma perda significativa!! Iremos evitar a perda de, aproximadamente, <b>${valorPerdaTotal}</b>.</p>
+            <br><div id="result" class="conteiner-result"></div>
         </div>
     </div>
 `;
@@ -356,6 +365,8 @@
                 <span class="by-month">por mês</span>
             </div>
             <button>Comprar</button>
+            <p>Investindo <b>${valorInvestimento}</b> ao todo, sua empresa deixará de ter uma perda significativa!! Iremos evitar a perda de, aproximadamente, <b>${valorPerdaTotal}</b>.</p>
+            <br><div id="result" class="conteiner-result"></div>
         </div>
     </div>
 `;

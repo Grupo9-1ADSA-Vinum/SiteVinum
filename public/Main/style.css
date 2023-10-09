@@ -202,8 +202,9 @@ P {
 .div_quatro {
     display: flex;
     padding: 20px;
-    margin-top: 20px;
-    background-color: #763A5A;
+    border-top: solid 80px;
+    border-top-color: #763A5A;
+    background-color: #ecf0f1;
 }
 .div_quatro .checkboxes{
     display: flex;
@@ -237,7 +238,6 @@ P {
 .div_quatro .container_calc {
     justify-content: center;
     align-items: center;
-    background-color: #763A5A;
     width: 400px;
     margin: 10px 120px;
     border-radius: 5px;
