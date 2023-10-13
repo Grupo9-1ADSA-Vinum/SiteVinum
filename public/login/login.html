@@ -45,21 +45,34 @@
                 <form class="form">
                     <label class="label-input" for="">
                         <i class="far fa-envelope icon-modify"></i>
-                        <input type="email" placeholder="Email">
+                        <input  id="input_email" type="email" placeholder="Email">
                     </label>
 
                     <label class="label-input" for="">
                         <i class="fas fa-lock icon-modify"></i>
-                        <input type="password" placeholder="Senha">
+                        <input id="input_senha" type="password" placeholder="Senha">
                     </label>
 
-                    <button class="btn btn-second">login</button>
+                    <button onclick="entrar()" class="btn btn-second">login</button>
                 </form>
             </div>
              </div>
              
             </div>
     </div>
+
+    <script>
+        function entrar(){
+            var email = input_email.value;
+            var senha = input_senha.value;
+            if(senha == "123" && email.indexOf("@sptech.school")> -1){
+            }
+            else{
+          alert('Senha ou email inválidos')
+      }
+    }
+        
+     </script>
 
     <div class="footer" id="suporte">
         <div class="footer1">
