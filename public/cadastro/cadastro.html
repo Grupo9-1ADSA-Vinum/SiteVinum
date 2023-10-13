@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 </head>
+
 <body>
     <div class="header">
         <div class="isolada">
@@ -21,10 +22,18 @@
     <div class="container1">
 
         <ul>
-            <a href="../Main/index.html"><li>Home</li></a>
-            <a href=""><li>Sobre nós</li></a>
-            <a href="#suporte"><li>Suporte</li></a>
-            <a href=""><li>Produtos</li></a>
+            <a href="../Main/index.html">
+                <li>Home</li>
+            </a>
+            <a href="">
+                <li>Sobre nós</li>
+            </a>
+            <a href="#suporte">
+                <li>Suporte</li>
+            </a>
+            <a href="">
+                <li>Produtos</li>
+            </a>
         </ul>
     </div>
     </div>
@@ -44,36 +53,36 @@
                 <form class="form">
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
-                        <input type="text" placeholder="nome">
+                        <input id="input_nome" type="text" placeholder="nome">
                     </label>
 
                     <label class="label-input" for="">
                         <i class="far fa-envelope icon-modify"></i>
-                        <input type="email" placeholder="Email">
+                        <input id="input_email" type="email" placeholder="Email">
                     </label>
 
                     <label class="label-input" for="">
                         <i class="far fa-envelope icon-modify"></i>
-                        <input type="email" placeholder="Confirmar email">
+                        <input id="input_confi" type="email" placeholder="Confirmar email">
                     </label>
 
                     <label class="label-input" for="">
                         <i class="fas fa-lock icon-modify"></i>
-                        <input type="password" placeholder="Senha">
+                        <input id="input_senha" type="password" placeholder="Senha">
                     </label>
 
                     <label class="label-input" for="">
                         <i class="fas fa-lock icon-modify"></i>
-                        <input type="password" placeholder="Confirmar senha">
+                        <input id="input_confi_senha" type="password" placeholder="Confirmar senha">
                     </label>
 
 
-                    <button class="btn btn-second">Criar</button>
+                    <button onclick="criar()" class="btn btn-second">Criar</button>
                 </form>
             </div>
-             </div>
-             
-            </div>
+        </div>
+
+    </div>
     </div>
 
     <div class="footer" id="suporte">
