@@ -81,7 +81,31 @@
                 </form>
             </div>
         </div>
+        <script>
+            function criar() {
+                var nome = input_nome.value;
+                var email = input_email.value;
+                var confiEmail = input_confi.value;
+                var senha = input_senha.value;
+                var confiSenha = input_confi_senha.value;
 
+                if (nome == "") {
+                    alert('Insira um nome')
+                }
+                else if (senha == confiSenha && email.indexOf("@sptech.school") > -1 && confiEmail.indexOf("@sptech.school") > -1 && email == confiEmail) {
+                    alert('Usuario Cadastrado com sucesso')
+                }
+                else if (senha == confiSenha && email.indexOf("@hotmail.com") > -1 && confiEmail.indexOf("@hotmail.com") > -1 && email == confiEmail) {
+                    alert('Usuario Cadastrado com sucesso')
+                }
+                else if (senha == confiSenha && email.indexOf("@gmail.com") > -1 && confiEmail.indexOf("@gmail.com") > -1 && email == confiEmail) {
+                    alert('Usuario Cadastrado com sucesso')
+                }
+                else {
+                    alert('email ou senha invalido, tente novamente');
+                }
+            }
+        </script>
     </div>
     </div>
 

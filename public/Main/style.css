@@ -178,8 +178,8 @@ P {
 }
 
 .box {
-    width: 280px;
-    height: 300px;
+    width: 350px;
+    height: 400px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -192,6 +192,7 @@ P {
 .box p {
     text-align: center;
     color: black;
+    margin: auto;
 }
 
 .div_quatro {
