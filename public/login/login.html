@@ -9,23 +9,32 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 </head>
+
 <body>
     <div class="header">
         <div class="isolada">
             <img src="../assets/imagens/icons8-wine-glass-64(1) 1.png" alt="">
-            <h1>Vinum</h1>
+            <h1">Vinum</h1>
         </div>
         <div class="btn_navbar">
-            
+
         </div>
     </div>
     <div class="container1">
 
         <ul>
-            <a href="../Main/index.html"><li>Home</li></a>
-            <a href="../Main/index.html"><li>Sobre nós</li></a>
-            <a href="#suporte"><li>Suporte</li></a>
-            <a href=""><li>Produtos</li></a>
+            <a href="../Main/index.html">
+                <li>Home</li>
+            </a>
+            <a href="../Main/index.html">
+                <li>Sobre nós</li>
+            </a>
+            <a href="#suporte">
+                <li>Suporte</li>
+            </a>
+            <a href="">
+                <li>Produtos</li>
+            </a>
         </ul>
     </div>
     </div>
@@ -45,7 +54,7 @@
                 <form class="form">
                     <label class="label-input" for="">
                         <i class="far fa-envelope icon-modify"></i>
-                        <input  id="input_email" type="email" placeholder="Email">
+                        <input id="input_email" type="email" placeholder="Email">
                     </label>
 
                     <label class="label-input" for="">
@@ -56,27 +65,26 @@
                     <button onclick="entrar()" class="btn btn-second">login</button>
                 </form>
             </div>
-             </div>
-             
-            </div>
+        </div>
+    </div>
     </div>
 
     <script>
-        function entrar(){
+        function entrar() {
             var email = input_email.value;
             var senha = input_senha.value;
-            
-            if(senha == "123" && email.indexOf("@sptech.school")> -1){
 
-            } else if(senha == "123" && email.indexOf("@hotmail.com") > -1){
+            if (senha == "123" && email.indexOf("@sptech.school") > -1) {
+                window.location.href = "http://www.google.pt"
+            } else if (senha == "123" && email.indexOf("@hotmail.com") > -1) {
 
-            }else if(senha == "123" && email.indexOf("@gmail.com") > -1){
+            } else if (senha == "123" && email.indexOf("@gmail.com") > -1) {
 
-            }else{
-          alert('Senha ou email inválidos')
-      }
-    }  
-     </script>
+            } else {
+                alert('Senha ou email inválidos')
+            }
+        }  
+    </script>
 
     <div class="footer" id="suporte">
         <div class="footer1">
