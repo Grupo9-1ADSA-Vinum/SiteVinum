@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="styleCadastro.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 </head>
 
@@ -14,10 +14,9 @@
     <div class="header">
         <div class="isolada">
             <img src="../assets/imagens/icons8-wine-glass-64(1) 1.png" alt="">
-            <h1">Vinum</h1>
+            <h1>Vinum</h1>
         </div>
         <div class="btn_navbar">
-
         </div>
     </div>
     <div class="container1">
@@ -26,13 +25,13 @@
             <a href="../Main/index.html">
                 <li>Home</li>
             </a>
-            <a href="../Main/index.html">
+            <a href="">
                 <li>Sobre nós</li>
             </a>
-            <a href="#suporte">
+            <a href="../Main/index.html">
                 <li>Suporte</li>
             </a>
-            <a href="">
+            <a href="../Main/index.html">
                 <li>Produtos</li>
             </a>
         </ul>
@@ -41,20 +40,30 @@
     <div class="container">
         <div class="content first-content">
             <div class="first-column">
-                <h2 class="title title-primary">Bem vindo de volta!</h2>
-                <p class="description description-primary">Caso não tenha uma conta</p>
-                <p class="description description-primary">clique aqui</p>
-                <a href="../cadastro/cadastro.html"><button id="signin" class="btn btn-primary">Cadastro</button></a>
+                <h2 class="title title-primary">Olá, Amigo</h2>
+                <p class="description description-primary">Caso ja tenha uma conta</p>
+                <p class="description description-primary">Aqui clique embaixo</p>
+                <a href="../login/login.html"><button id="signin" class="btn btn-primary">Login</button></a>
             </div>
 
             <div class="second-column">
-                <h2 class="title title-second">Login</h2>
+                <h2 class="title title-second">Cadastrar - se</h2>
                 <div class="social-media">
                 </div>
-                <!-- <form class="form"> -->
+                <div class="form">
+                    <label class="label-input" for="">
+                        <i class="far fa-user icon-modify"></i>
+                        <input id="input_nome" type="text" placeholder="nome">
+                    </label>
+
                     <label class="label-input" for="">
                         <i class="far fa-envelope icon-modify"></i>
                         <input id="input_email" type="email" placeholder="Email">
+                    </label>
+
+                    <label class="label-input" for="">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input id="input_confi" type="email" placeholder="Confirmar email">
                     </label>
 
                     <label class="label-input" for="">
@@ -62,14 +71,19 @@
                         <input id="input_senha" type="password" placeholder="Senha">
                     </label>
 
-                    <button onclick="entrar()" class="btn btn-second">login</button>
-                <!-- </form> -->
+                    <label class="label-input" for="">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input id="input_confi_senha" type="password" placeholder="Confirmar senha">
+                    </label>
+                </div>
+
+                <button onclick="criar()" class="btn btn-second">Criar</button>
+
             </div>
         </div>
-    </div>
-    </div>
 
- 
+    </div>
+    </div>
 
     <div class="footer" id="suporte">
         <div class="footer1">
@@ -124,19 +138,32 @@
 </body>
 
 </html>
+
 <script>
-    function entrar() {
+    function criar() {
+        var nome = input_nome.value;
         var email = input_email.value;
+        var confiEmail = input_confi.value;
         var senha = input_senha.value;
+        var confiSenha = input_confi_senha.value;
 
-        if (senha == "123" && email.indexOf("@sptech.school") > -1) {
-            window.location.href = "dashboard.html"
-        } else if (senha == "123" && email.indexOf("@hotmail.com") > -1) {
-
-        } else if (senha == "123" && email.indexOf("@gmail.com") > -1) {
-
-        } else {
-            alert('Senha ou email inválidos')
+        if (nome == "") {
+            alert('Insira um nome')
         }
-    }  
+        else if (senha == confiSenha && email.indexOf("@sptech.school") > -1 && confiEmail.indexOf("@sptech.school") > -1 && email == confiEmail) {
+            alert('Usuario Cadastrado com sucesso')
+            window.location.href = "login.html"
+        }
+        else if (senha == confiSenha && email.indexOf("@hotmail.com") > -1 && confiEmail.indexOf("@hotmail.com") > -1 && email == confiEmail) {
+            alert('Usuario Cadastrado com sucesso')
+            window.location.href = "login.html"
+        }
+        else if (senha == confiSenha && email.indexOf("@gmail.com") > -1 && confiEmail.indexOf("@gmail.com") > -1 && email == confiEmail) {
+            alert('Usuario Cadastrado com sucesso')
+            window.location.href = "login.html"
+        }
+        else {
+            alert('email ou senha invalido, tente novamente');
+        }
+    }
 </script>
