@@ -555,9 +555,11 @@ h6 {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    margin: 0 px 60px;
 }
 
 .plano {
+    z-index: 1;
     width: 300px;
     height: 400px;
     background: #e9e9e9;
@@ -565,17 +567,19 @@ h6 {
     text-align: center;
     position: relative;
     border-radius: 15px;
-    box-shadow: 0px 0px 20px grey;
+    filter: drop-shadow(1px 4px 17px grey);
 }
 .plano p{
     margin-top: 20px;
 }
 
 .header-plano {
+    margin-left: -12px;
+    padding: 0 12px;
     color: #fff;
     width: 300px;
     height: 220px;
-    background-color: #763A5A;
+    background-color: #70445c;
     border-radius: 15px;
     display: flex;
     justify-content: center;
@@ -597,7 +601,7 @@ h6 {
 }
 
 .sombra-header{
-    filter: drop-shadow(2px 4px 6px black)
+     filter: drop-shadow(2px 4px 6px black) 
 }
 .preco{
     background-color: #fff;
@@ -626,22 +630,32 @@ h6 {
 }
 .body-plano p{
     color: #000;
+    filter: drop-shadow(1px 1px 2px grey);
 }
 .plano button{
     border: none;
-    background-color: #763A5A;
+    background-color: #70445c;
     width: 100px;
     height: 40px;
     border-radius: 20px;
     color: #fff;
     font-size: 15px;
-    position: absolute;
+    margin-top: 18px;
     left: 102px;
     bottom: -17px;
     font-weight: 700;
 }
 .plano button:hover{
     background-color: #fff;
-    border: 1px solid #763A5A;
+    border: 1px solid #70445c;
     color: #763A5A;
+}
+.footer-plano{
+    position: relative;
+    z-index: -1;
+    height: 100px;
+    margin-top: -27px;
+    background-color: #e9e9e9;
+    border-radius: 17px;
+    clip-path: polygon(0 0, 100% 0%, 100% 0%, 50% 37%, 0% 0%);
 }
