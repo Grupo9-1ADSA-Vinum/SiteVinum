@@ -750,3 +750,39 @@ h6 {
     margin-bottom: 105px;
     margin-top: 15px;
 }
+
+.line1{
+    margin-right: 25px;
+}
+
+.main{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.armazem{
+    justify-content: center;
+    text-align: center;
+    margin-top: 1.5%;
+    margin-bottom: 1%;
+    position: absolute;
+    top: 18%;
+    margin-bottom: 10px;
+}
+.armazem select{
+    background-color: #763A5A;
+    color: black;
+    border: none;
+    font-size: 30px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.armazem select:hover{
+  cursor: pointer;
+}
+.armazem option{
+    color: black;
+}
