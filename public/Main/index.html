@@ -420,4 +420,11 @@
     function entrar() {
 
     }
+    var navBar = document.querySelector(".navbar");
+
+    function mudarCor(){
+        navBar.classList.toggle("active", scrollY > 120);
+    }
+
+    window.addEventListener("scroll", mudarCor)
 </script>
