@@ -67,6 +67,11 @@
                     </label>
 
                     <label class="label-input" for="">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input id="input_cnpj" type="cnpj" placeholder="Digite seu CNPJ (apenas numeros!!)">
+                    </label>
+
+                    <label class="label-input" for="">
                         <i class="fas fa-lock icon-modify"></i>
                         <input id="input_senha" type="password" placeholder="Senha">
                     </label>
@@ -146,19 +151,22 @@
         var confiEmail = input_confi.value;
         var senha = input_senha.value;
         var confiSenha = input_confi_senha.value;
+        var dadosCnpj = input_cnpj.value
+        dadosCnpj = dadosCnpj.length
+
 
         if (nome == "") {
             alert('Insira um nome')
         }
-        else if (senha == confiSenha && email.indexOf("@sptech.school") > -1 && confiEmail.indexOf("@sptech.school") > -1 && email == confiEmail) {
+        else if (senha == confiSenha && email.indexOf("@sptech.school") > -1 && confiEmail.indexOf("@sptech.school") > -1 && email == confiEmail && dadosCnpj == 14) {
             alert('Usuario Cadastrado com sucesso')
             window.location.href = "login.html"
         }
-        else if (senha == confiSenha && email.indexOf("@hotmail.com") > -1 && confiEmail.indexOf("@hotmail.com") > -1 && email == confiEmail) {
+        else if (senha == confiSenha && email.indexOf("@hotmail.com") > -1 && confiEmail.indexOf("@hotmail.com") > -1 && email == confiEmail && dadosCnpj == 14) {
             alert('Usuario Cadastrado com sucesso')
             window.location.href = "login.html"
         }
-        else if (senha == confiSenha && email.indexOf("@gmail.com") > -1 && confiEmail.indexOf("@gmail.com") > -1 && email == confiEmail) {
+        else if (senha == confiSenha && email.indexOf("@gmail.com") > -1 && confiEmail.indexOf("@gmail.com") > -1 && email == confiEmail && dadosCnpj == 14) {
             alert('Usuario Cadastrado com sucesso')
             window.location.href = "login.html"
         }

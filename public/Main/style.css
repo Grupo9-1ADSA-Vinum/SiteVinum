@@ -151,6 +151,7 @@ P {
 #texto_nos {
     padding-top: 10px;
     padding-left: 40%;
+    color: #fff;
 }
 
 #texto_sobre {
@@ -578,4 +579,15 @@ h6 {
 .input-email button {
     width: 80px;
     height: 40px;
+}
+
+.boxes .box h4{
+    font-size: 25px;
+}
+
+.boxes .box p{
+    font-size: 20px;
+}
+.boxes .box{
+    box-shadow: 2px 1px 1px 3px #383838;
 }
