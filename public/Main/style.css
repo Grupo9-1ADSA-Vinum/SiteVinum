@@ -153,6 +153,10 @@ P {
     background-color: #763A5A;
     display: flex;
 }
+.sobre p{
+    font-size: 15px;
+    text-align: center;
+}
 #box-missao{
     margin-left: 0;
 }
@@ -697,7 +701,7 @@ h6 {
     position: relative;
     z-index: -1;
     height: 100px;
-    margin-top: -27px;
+    margin-top: -2px;
     background-color: #e9e9e9;
     border-radius: 17px;
     clip-path: polygon(0 0, 100% 0%, 100% 0%, 50% 37%, 0% 0%);
