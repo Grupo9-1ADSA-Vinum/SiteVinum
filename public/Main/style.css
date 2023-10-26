@@ -1,9 +1,9 @@
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -18,7 +18,7 @@ body {
     background-color: #fff;
     align-items: center;
     justify-content: space-between;
-    
+
 }
 
 .header h1 {
@@ -58,7 +58,7 @@ body {
 }
 
 
-.container a{
+.container a {
     color: #fff;
     text-decoration: none;
 }
@@ -94,11 +94,11 @@ li::after {
     background-color: blueviolet;
 }
 
-li:hover{
+li:hover {
     color: #000;
 }
 
-li:hover::after{
+li:hover::after {
     transform: scaleX(1);
     transform-origin: left;
 }
@@ -115,8 +115,8 @@ li:hover::after{
     align-items: center;
 }
 
-.gradient{
-    background: linear-gradient(90deg, rgba(252, 252, 252, 0.1) 0%, rgba(255,255,255, 0.2) 10%, rgba(0,0,0, 1) 100%);
+.gradient {
+    background: linear-gradient(90deg, rgba(252, 252, 252, 0.1) 0%, rgba(255, 255, 255, 0.2) 10%, rgba(0, 0, 0, 1) 100%);
     width: 100%;
     height: 100%;
     display: flex;
@@ -125,7 +125,7 @@ li:hover::after{
 }
 
 #banner_navbar {
-    display: flex;  
+    display: flex;
     flex-direction: column;
     margin-right: 200px;
 }
@@ -140,7 +140,9 @@ P {
     padding-right: 80px;
     background-color: #763A5A;
     display: flex;
-    margin-bottom: 20px;
+}
+#box-missao{
+    margin-left: 0;
 }
 
 #image_div_segundaria img {
@@ -161,15 +163,20 @@ P {
 }
 
 .social {
+    padding: 80px;
+    position: relative;
     background-color: #e5e5e5;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 20px;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    
+}
+.social span, p {
+    font-size: 13px;
 }
 
 .box img {
+    top: 17px;
+    position: absolute;
     width: 100px;
 }
 
@@ -179,8 +186,10 @@ P {
 }
 
 .box {
-    width: 350px;
-    height: 400px;
+    box-shadow: 0px 0px 25px grey;
+    padding: 15px;
+    width: 312px;
+    height: 300px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -193,7 +202,11 @@ P {
 .box p {
     text-align: center;
     color: black;
-    margin: auto;
+    margin: 5px;
+}
+
+.box h4 {
+     margin-bottom: 11px; 
 }
 
 .div_quatro {
@@ -217,18 +230,20 @@ P {
     flex-direction: column;
     box-shadow: 0 0 10px #000;
 }
-.div_quatro .container h2{
+
+.div_quatro .container h2 {
     text-align: center;
     margin-bottom: 20px;
 }
-.div_quatro .container p{
+
+.div_quatro .container p {
     margin-top: 15px;
     font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 370;
     color: #000;
 }
 
-.div_quatro .container .btn-second{
+.div_quatro .container .btn-second {
     font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
     border-radius: 15px;
@@ -243,13 +258,14 @@ P {
     border: none;
     margin-top: 1rem;
 }
-.div_quatro .container .btn-second:hover{
+
+.div_quatro .container .btn-second:hover {
     background-color: #fff;
     border: 1px solid #763A5A;
     color: #763A5A;
 }
 
-.div_quatro .container input{
+.div_quatro .container input {
     outline: none;
     height: 25px;
     border: none;
@@ -257,6 +273,7 @@ P {
     background-color: #ccc;
 
 }
+
 .btn {
     font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
@@ -279,20 +296,24 @@ P {
     border: 1px solid #fff;
     transition: background-color .5s;
 }
+
 .btn-primary:hover {
     background-color: #fff;
     color: #763A5A;
 }
+
 .btn-second {
     background-color: #763A5A;
     border: 1px solid #763A5A;
     transition: background-color .5s;
 }
+
 .btn-second:hover {
     background-color: #fff;
     border: 1px solid #763A5A;
     color: #763A5A;
 }
+
 input[type="text"] {
     background-color: #ad869b;
     width: 90%;
@@ -442,9 +463,8 @@ button:hover {
     font-family: Arial, Helvetica, sans-serif;
     margin-left: 8px;
 }
-.linha .fique-dentro button {
-    
-}
+
+.linha .fique-dentro button {}
 
 .footer {
     background-color: #763A5A;
@@ -547,6 +567,7 @@ h6 {
     width: 80px;
     height: 40px;
 }
+
 .planos {
     width: 95vw;
     height: 100%;
@@ -569,7 +590,8 @@ h6 {
     border-radius: 15px;
     filter: drop-shadow(1px 4px 17px grey);
 }
-.plano p{
+
+.plano p {
     margin-top: 20px;
 }
 
@@ -592,7 +614,8 @@ h6 {
             0% 59%);
     margin-right: 40px;
 }
-.header-plano .titulo h2{
+
+.header-plano .titulo h2 {
     margin-top: 40px;
     font-family: 'Montserrat', sans-serif;
     font-size: 35px;
@@ -600,10 +623,11 @@ h6 {
     text-transform: uppercase;
 }
 
-.sombra-header{
-     filter: drop-shadow(2px 4px 6px black) 
+.sombra-header {
+    filter: drop-shadow(2px 4px 6px black)
 }
-.preco{
+
+.preco {
     background-color: #fff;
     border-radius: 50%;
     height: 100px;
@@ -614,25 +638,30 @@ h6 {
     right: 101px;
     filter: drop-shadow(1px 4px 5px black);
 }
-.preco p{
+
+.preco p {
     margin-top: 35px;
     color: #000;
     font-size: 17px;
 }
-.preco h5{
+
+.preco h5 {
     font-weight: 400;
     font-size: 15px;
     margin-bottom: 10px;
 }
-.body-plano{
+
+.body-plano {
     padding: 15px;
     filter: drop-shadow(1px 1px 2px grey);
 }
-.body-plano p{
+
+.body-plano p {
     color: #000;
     filter: drop-shadow(1px 1px 2px grey);
 }
-.plano button{
+
+.plano button {
     border: none;
     background-color: #70445c;
     width: 100px;
@@ -645,12 +674,14 @@ h6 {
     bottom: -17px;
     font-weight: 700;
 }
-.plano button:hover{
+
+.plano button:hover {
     background-color: #fff;
     border: 1px solid #70445c;
     color: #763A5A;
 }
-.footer-plano{
+
+.footer-plano {
     position: relative;
     z-index: -1;
     height: 100px;
