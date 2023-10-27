@@ -3,7 +3,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: content-box;
 }
 
 html {
@@ -27,6 +27,7 @@ body {
 .content {
     background-color: #fff;
     border-radius: 15px;
+    box-shadow: 0px 0px 10px #94999a;
     width: 960px;
     height: 50%;
     margin-top: 55px;
@@ -190,7 +191,8 @@ a:hover {
     height: 45px;
     width: 100%;
     border: none;
-    background-color: #ecf0f1;
+    border-radius: 10px;
+    background-color: #e0d0de;
 }
 
 input:-webkit-autofill {
@@ -199,7 +201,7 @@ input:-webkit-autofill {
 }
 
 .label-input {
-    background-color: #ecf0f1;
+    background-color: #e0d0de;
     display: flex;
     align-items: center;
     margin: 8px;
