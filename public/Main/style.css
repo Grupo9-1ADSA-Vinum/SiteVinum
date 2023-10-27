@@ -227,7 +227,7 @@ P {
 
 .div_quatro {
     display: flex;
-    padding: 20px;
+    padding: 10px;
     border-top: solid 80px;
     border-top-color: #763A5A;
     background-color: #ecf0f1;
@@ -593,6 +593,7 @@ h6 {
     align-items: center;
     padding: 20px;
     margin: 0 px 60px;
+    margin-bottom: 100px;
 }
 
 .plano {
