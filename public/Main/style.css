@@ -180,6 +180,7 @@ P {
 }
 
 .social {
+    height: 300px;
     padding: 80px;
     position: relative;
     background-color: #e5e5e5;
