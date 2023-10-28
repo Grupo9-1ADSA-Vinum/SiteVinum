@@ -197,6 +197,7 @@ P {
     top: 24px;
     position: absolute;
     width: 100px;
+    filter: drop-shadow(0px 4px 5px gray);
     transition: all .9s ease;
 }
 .box #visao{
