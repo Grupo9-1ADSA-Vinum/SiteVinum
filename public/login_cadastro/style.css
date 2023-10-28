@@ -669,11 +669,11 @@ li::after {
     transition: transform 0.55;
     transform: scaleX(0);
     transform-origin: right;
-    background-color: blueviolet;
+    background-color: #ffc4fb;
 }
 
 li:hover {
-    color: #000;
+    color: #ffc4fb;
 }
 
 li:hover::after {

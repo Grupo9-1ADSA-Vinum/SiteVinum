@@ -11,9 +11,9 @@ body {
 }
 
 .header {
-    padding-left: 40px;
-    padding-right: 60px;
+    padding-left: 0px;
     display: flex;
+    height: 120px;
     background-color: #fff;
     align-items: center;
     justify-content: space-between;
@@ -87,14 +87,14 @@ li::after {
     height: 3px;
     top: 100%;
     left: 0;
-    transition: transform 0.55;
+    transition: transform 1.90;
     transform: scaleX(0);
     transform-origin: right;
-    background-color: blueviolet;
+    background-color: #ffc4fb;
 }
 
 li:hover{
-    color: #000;
+    color: #ffc4fb;
 }
 
 li:hover::after{
@@ -126,7 +126,7 @@ li:hover::after{
 #banner_navbar {
     display: flex;  
     flex-direction: column;
-    margin-right: 200px;
+    margin-right: 58px;
 }
 
 .banner h1,
@@ -136,7 +136,6 @@ P {
 
 .sobre {
     padding-left: 80px;
-    padding-right: 80px;
     background-color: #763A5A;
     display: flex;
     margin-bottom: 20px;

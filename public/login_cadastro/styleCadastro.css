@@ -56,6 +56,9 @@ body {
     font-weight: bold;
     text-transform: capitalize;
 }
+.title-primary{
+    font-size: 40px;
+}
 
 .title-primary {
     color: #fff;
@@ -180,6 +183,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     width: 55%;
+    border-radius: 10px;
 }
 
 .form input {
@@ -187,7 +191,7 @@ a:hover {
     height: 45px;
     width: 100%;
     border: none;
-    background-color: #ecf0f1;
+    background-color: #e0d0de;
 }
 
 input:-webkit-autofill {
@@ -196,7 +200,7 @@ input:-webkit-autofill {
 }
 
 .label-input {
-    background-color: #ecf0f1;
+    background-color: #e0d0de;
     display: flex;
     align-items: center;
     margin: 8px;
@@ -645,6 +649,7 @@ input:-webkit-autofill {
 
 
 li {
+    color: #fff;
     position: relative;
     display: block;
     transition: 0.5s;
@@ -662,11 +667,11 @@ li::after {
     transition: transform 0.55;
     transform: scaleX(0);
     transform-origin: right;
-    background-color: blueviolet;
+    background-color: #ffc4fb;
 }
 
 li:hover {
-    color: #fff;
+    color: #ffc4fb;
 }
 
 li:hover::after {
