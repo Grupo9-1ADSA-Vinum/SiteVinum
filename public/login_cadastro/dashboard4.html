@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+</head>
+
+<body>
+    <div class="header" style="background-color: #7A1B33;">
+        <div class="isolada">
+            <img src="../assets/imgs/icons8-wine-glass-64 1.png" alt="">
+            <h1 style="color: white;">Vinum</h1>
+        </div>
+
+    </div>
+    <div class="main">
+    </div>
+    <div class="chart">
+        <div class="line1">
+            <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
+            <div class="Chart3">
+                <canvas id="myChart3" style="position: relative; height:40vh; width:40vw"></canvas>
+            </div>
+        </div>
+        <div class="line1" id="Umidade" style="height: 330px;">
+            <canvas id="myChart2" style="position: relative; height:40vh; width:40vw"></canvas>
+            <!-- <img src="Umidade.png" height="145px"> -->
+            <div class="umi-kpis">
+                <div class="min_crit">Alerta Critico!<br>Temperatura <br>
+                    <p> 4ºC <br> 10/10/2023 00:00</p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="armazem">
+        <select id="id_armazem" onchange="window.location.href = this.value;">
+            <option value="dashboard5.html">Módulo 5</option>
+            <option value="dashboard.html">Módulo 1</option>
+            <option value="dashboard2.html">Módulo 2</option>
+            <option value="dashboard3.html">Módulo 3</option>
+            <option value="dashboard4.html">Módulo 4</option>
+        </select>
+    </div>
+
+
+    <script>
+
+        const labels = [
+            '10/10/2023 00:00',
+            '10/10/2023 01:00',
+            '10/10/2023 02:00',
+            '10/10/2023 03:00',
+            '10/10/2023 04:00',
+            '10/10/2023 05:00',
+            '10/10/2023 06:00',
+            '10/10/2023 07:00',
+            '10/10/2023 08:00',
+            '10/10/2023 09:00',
+            '10/10/2023 10:00',
+            '10/10/2023 11:00',
+            '10/10/2023 12:00',
+            '10/10/2023 13:00',
+            '10/10/2023 14:00',
+            '10/10/2023 15:00',
+            '10/10/2023 16:00',
+            '10/10/2023 17:00',
+            '10/10/2023 18:00',
+            '10/10/2023 19:00',
+            '10/10/2023 20:00',
+            '10/10/2023 21:00',
+            '10/10/2023 22:00',
+            '10/10/2023 23:00',
+
+        ];
+
+        const labels2 = [
+            '10/10/2023 00:00',
+            '10/10/2023 01:00',
+            '10/10/2023 02:00',
+            '10/10/2023 03:00',
+            '10/10/2023 04:00',
+            '10/10/2023 05:00',
+            '10/10/2023 06:00',
+            '10/10/2023 07:00',
+            '10/10/2023 08:00',
+            '10/10/2023 09:00',
+            '10/10/2023 10:00',
+            '10/10/2023 11:00',
+            '10/10/2023 12:00',
+            '10/10/2023 13:00',
+            '10/10/2023 14:00',
+            '10/10/2023 15:00',
+            '10/10/2023 16:00',
+            '10/10/2023 17:00',
+            '10/10/2023 18:00',
+            '10/10/2023 19:00',
+            '10/10/2023 20:00',
+            '10/10/2023 21:00',
+            '10/10/2023 22:00',
+            '10/10/2023 23:00',
+        ];
+
+        const data = {
+            labels: labels,
+            datasets :[  {
+                label: 'Temperatura',
+                backgroundColor: '#ff8c00',
+                borderColor: '#ff8c00',
+                data: [4, 6.4, 7.3, 8, 7.8, 8, 7.9, 8.2, 8.2, 7.8, 8, 9.4, 10.3, 11.3, 11.5, 12.5, 11.5, 11.2, 11.5, 10.6, 7.2, 7.9, 7, 8.5],
+            }]
+        };
+
+        const data2 = {
+            labels: labels2,
+            datasets: [{
+                label: 'Umidade',
+                backgroundColor: 'rgb(0, 0, 132)',
+                borderColor: 'rgb(0, 0, 132)',
+                data: [68.1, 67.6, 64.2, 67.2, 67.2, 66.1, 66.8, 67.5, 68.1, 65.5, 62.1, 58.1, 56.8, 54.6, 53.9, 55.1, 57.3, 54.7, 56.2, 59.2, 57.9, 57.2, 58.9, 62.8],
+            }]
+        };
+        const data3 = {
+            labels: labels2,
+            datasets: [{
+                label: 'Umidade',
+                backgroundColor: 'rgb(0, 0, 132)',
+                borderColor: 'rgb(0, 0, 132)',
+                data: [68.1, 67.6, 64.2, 67.2, 67.2, 66.1, 66.8, 67.5, 68.1, 65.5, 62.1, 58.1, 56.8, 54.6, 53.9, 55.1, 57.3, 54.7, 56.2, 59.2, 57.9, 57.2, 58.9, 62.8],
+            }, {
+                label: 'Temperatura',
+                backgroundColor: '#ff8c00',
+                borderColor: '#ff8c00',
+                data: [4, 6.4, 7.3, 8, 7.8, 8, 7.9, 8.2, 8.2, 7.8, 8, 9.4, 10.3, 11.3, 12.5, 12.5, 11.5, 11.2, 11.5, 10.6, 7.2, 7.9, 7, 8.5],
+            }]
+        }
+
+
+        const config = {
+            type: 'line',
+            data: data,
+            options: {
+            }
+        };
+
+        const config2 = {
+            type: 'line',
+            data: data2,
+            options: {}
+        };
+        const config3 = {
+            type: 'bar',
+            data: data3,
+            options: {}
+        };
+    </script>
+
+    <script>
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+
+        const myChart2 = new Chart(
+            document.getElementById('myChart2'),
+            config2
+        );
+        const myChart3 = new Chart(
+            document.getElementById('myChart3'),
+            config3
+        )
+    </script>
+
+    <div class="footer" id="suporte">
+        <div class="footer1">
+            <div class="bloco">
+                <img src="../assets/imgs/icons8-location-pin-48 1.png">
+                <div class="texto">
+                    <h4 class="titulo-footer">Endereço</h4>
+                    <h6>Rua Haddock Lobo, 595 São Paulo - SP</h6>
+                </div>
+            </div>
+
+            <div class="bloco">
+                <img src="../assets/imgs/icons8-phone-48 1.png">
+                <div class="texto">
+                    <h4 class="titulo-footer">Telefone</h4>
+                    <h6>(11) 3589-4043</h6>
+                </div>
+            </div>
+
+            <div class="bloco">
+                <img src="../assets/imgs/icons8-email-48 1.png">
+                <div class="texto">
+                    <h4 class="titulo-footer">E-mail</h4>
+                    <h6>projeto.vinum@sptech.school</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="pai-linha">
+            <div class="linha1">
+                <div class="footer2">
+                    <div class="bloco">
+                        <img src="../assets/imgs/icons8-wine-glass-64 1.png">
+                        <div class="texto">
+                            <h3 class="titulo-footer">Vinum</h3>
+                            <h6>soluções para a sua adega</h6>
+                        </div>
+                    </div>
+
+                    <div class="redes">
+                        <h5 class="titulo-footer">Nos siga!</h5>
+                        <div class="imagens">
+                            <img src="../assets/imgs/icons8-whatsapp-48 1.png">
+                            <img src="../assets/imgs/icons8-facebook-48 1.png">
+                            <img src="../assets/imgs/icons8-instagram-48 1.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
