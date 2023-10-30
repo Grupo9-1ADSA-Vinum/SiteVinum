@@ -32,19 +32,11 @@
             <canvas id="myChart2" style="position: relative; height:40vh; width:40vw"></canvas>
             <!-- <img src="Umidade.png" height="145px"> -->
             <div class="umi-kpis">
-                <div class="max_umi">Alerta Critico!<br>Umidade <br>
-                    <p> 81,4% <br> 10/10/2023 00:00</p>
-                </div>
-                <div class="min_umi">Alerta Critico!<br>Umidade <br>
-                    <p> 35,4% <br> 10/10/2023 16:00</p>
-                </div>
-            </div>
-            <div class="umi-kpis">
                 <div class="emergencia_umi">Emergencia!<br>Umidade <br>
                     <p> 77,6% <br> 10/10/2023 01:00</p>
                 </div>
                 <div class="alerta_umi">Alerta! <br>Temperatura <br>
-                    <p> 13,5% <br> 10/10/2023 14:00</p>
+                    <p> 13,5ºC <br> 10/10/2023 14:00</p>
                 </div>
             </div>
         </div>
@@ -55,6 +47,8 @@
             <option value="dashboard2.html">Módulo 2</option>
             <option value="dashboard.html">Módulo 1</option>
             <option value="dashboard3.html">Módulo 3</option>
+            <option value="dashboard4.html">Módulo 4</option>
+            <option value="dashboard5.html">Módulo 5</option>
         </select>
     </div>
 
@@ -132,7 +126,7 @@
                 label: 'Umidade',
                 backgroundColor: 'rgb(0, 0, 132)',
                 borderColor: 'rgb(0, 0, 132)',
-                data: [81.4, 77.6, 71.2, 67.2, 67.2, 66.1, 66.8, 67.5, 68.1, 65.5, 62.1, 58.1, 56.8, 54.6, 53.9, 55.1, 57.3, 54.7, 56.2, 59.2, 57.9, 57.2, 58.9, 62.8],
+                data: [68.4, 77.6, 67.5, 67.2, 67.2, 66.1, 66.8, 67.5, 68.1, 65.5, 62.1, 58.1, 56.8, 54.6, 53.9, 55.1, 57.3, 54.7, 56.2, 59.2, 57.9, 57.2, 58.9, 62.8],
             }]
         };
         const data3 = {
@@ -141,7 +135,7 @@
                 label: 'Umidade',
                 backgroundColor: 'rgb(0, 0, 132)',
                 borderColor: 'rgb(0, 0, 132)',
-                data: [81.4, 77.6, 71.2, 67.2, 67.2, 66.1, 66.8, 67.5, 68.1, 65.5, 62.1, 58.1, 56.8, 54.6, 53.9, 55.1, 57.3, 54.7, 56.2, 59.2, 57.9, 57.2, 58.9, 62.8],
+                data: [68.4, 77.6, 67.5, 67.2, 67.2, 66.1, 66.8, 67.5, 68.1, 65.5, 62.1, 58.1, 56.8, 54.6, 53.9, 55.1, 57.3, 54.7, 56.2, 59.2, 57.9, 57.2, 58.9, 62.8],
             }, {
                 label: 'Temperatura',
                 backgroundColor: '#ff8c00',
@@ -185,57 +179,6 @@
             config3
         )
     </script>
-
-    <div class="footer" id="suporte">
-        <div class="footer1">
-            <div class="bloco">
-                <img src="../assets/imgs/icons8-location-pin-48 1.png">
-                <div class="texto">
-                    <h4 class="titulo-footer">Endereço</h4>
-                    <h6>Rua Haddock Lobo, 595 São Paulo - SP</h6>
-                </div>
-            </div>
-
-            <div class="bloco">
-                <img src="../assets/imgs/icons8-phone-48 1.png">
-                <div class="texto">
-                    <h4 class="titulo-footer">Telefone</h4>
-                    <h6>(11) 3589-4043</h6>
-                </div>
-            </div>
-
-            <div class="bloco">
-                <img src="../assets/imgs/icons8-email-48 1.png">
-                <div class="texto">
-                    <h4 class="titulo-footer">E-mail</h4>
-                    <h6>projeto.vinum@sptech.school</h6>
-                </div>
-            </div>
-        </div>
-
-        <div class="pai-linha">
-            <div class="linha1">
-                <div class="footer2">
-                    <div class="bloco">
-                        <img src="../assets/imgs/icons8-wine-glass-64 1.png">
-                        <div class="texto">
-                            <h3 class="titulo-footer">Vinum</h3>
-                            <h6>soluções para a sua adega</h6>
-                        </div>
-                    </div>
-
-                    <div class="redes">
-                        <h5 class="titulo-footer">Nos siga!</h5>
-                        <div class="imagens">
-                            <img src="../assets/imgs/icons8-whatsapp-48 1.png">
-                            <img src="../assets/imgs/icons8-facebook-48 1.png">
-                            <img src="../assets/imgs/icons8-instagram-48 1.png">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>

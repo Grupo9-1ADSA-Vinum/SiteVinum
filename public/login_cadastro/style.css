@@ -804,7 +804,7 @@ h6 {
     justify-content: center;
 }
 .chart {
-    background-color: #7A1B33;
+    background-color: #7A1B33; 
     display: flex;
     position: relative;
     justify-content: space-evenly;
