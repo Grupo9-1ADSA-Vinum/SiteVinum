@@ -193,7 +193,6 @@
 
                     </p>
 
-
                 </div>
 
             </div>
@@ -202,87 +201,142 @@
 
     </div>
 
-
     <div class="div_quatro" id="calculadora">
+
         <div class="container">
+
             <h2 class="titulo">V I N U M</h2>
 
             <p>Valor estimado dos vinhos produzidos:</p>
+
             <input type="text" id="inp_valor_vinho">
 
             <p>Quantidade de vinhos que estarão nas adegas:</p>
+
             <input type="text" id="inp_quantidade_vinho">
 
             <button class="btn-second" onclick="calcularSimulacao()">Calcular</button>
+
         </div>
-
-
 
     </div>
+
     <div class="inicio-footer">
+
         <div class="linha">
+
             <div class="fique-dentro">
+
                 <h2>Fique por dentro!</h2>
+
                 <div class="input-email">
+
                     <input type="email" placeholder="exemplo@dominio.com">
+
                     <button>Enviar</button>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
 
     <div class="footer" id="suporte">
 
         <div class="footer1">
+
             <div class="bloco">
+
                 <img src="../assets/imgs/icons8-location-pin-48 1.png">
+
                 <div class="texto">
+
                     <h4 class="titulo-footer">Endereço</h4>
+
                     <h6>Rua Haddock Lobo, 595 São Paulo - SP</h6>
+
                 </div>
+
             </div>
 
             <div class="bloco">
+
                 <img src="../assets/imgs/icons8-phone-48 1.png">
+
                 <div class="texto">
+
                     <h4 class="titulo-footer">Telefone</h4>
+
                     <h6>(11) 3589-4043</h6>
+
                 </div>
+
             </div>
 
             <div class="bloco">
+
                 <img src="../assets/imgs/icons8-email-48 1.png">
+
                 <div class="texto">
+
                     <h4 class="titulo-footer">E-mail</h4>
+
                     <h6>projeto.vinum@sptech.school</h6>
+
                 </div>
+
             </div>
+
         </div>
 
         <div class="pai-linha">
+
             <div class="linha1">
+
                 <div class="footer2">
+
                     <div class="bloco">
+
                         <img src="../assets/imgs/icons8-wine-glass-64 1.png">
+
                         <div class="texto">
+
                             <h3 class="titulo-footer">Vinum</h3>
+
                             <h6>soluções para a sua adega</h6>
+
                         </div>
+
                     </div>
 
                     <div class="redes">
+
                         <h5 class="titulo-footer">Nos siga!</h5>
+
                         <div class="imagens">
+
                             <img src="../assets/imgs/icons8-whatsapp-48 1.png">
+
                             <img src="../assets/imgs/icons8-facebook-48 1.png">
+
                             <img src="../assets/imgs/icons8-instagram-48 1.png">
-                            <a href="https://github.com/Vinum-Grupo8-1ADSA"><img src="../assets/imgs/github (1).png"
-                                    onclick="grupoGit()"></a>
+
+                            <a href="https://github.com/Vinum-Grupo8-1ADSA">
+                                <img src="../assets/imgs/github (1).png" onclick="grupoGit()">
+                            </a>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
 
 </body>
@@ -291,34 +345,33 @@
 
 <script>
 
-    function grupoGit() {
-
-    }
+    // function grupoGit() {}
 
     function calcularSimulacao() {
 
         var valorVinho = Number(inp_valor_vinho.value);
+
         var quantidadeVinhos = Number(inp_quantidade_vinho.value);;
 
-
         var valorAdega = 1000;
+
         var quantidadeVinhosNaAdega = 12;
+
         var porcentagemLucro = 2;
+
         var quantidadeAdegas = quantidadeVinhos / quantidadeVinhosNaAdega;
 
         var valorAdegaTotal = valorAdega * quantidadeAdegas;
+
         var valorLucro = valorAdegaTotal * porcentagemLucro;
 
+        var valorMensalidade = valorLucro.toFixed(2) / 12
 
-        var valorMensalidade = valorLucro.toFixed(2) / 12 // toFixed é para ficar com duas casas decimais 
-
-
-
+        // toFixed é para ficar com duas casas decimais 
         // Calculo para saber que tier o usuário se encaixa
         // Leva em consideração a quantidade de adegas que necessitará e se irá utilizar o controle de estoque.
         // var pesoTier = quantidadeAdegas;
         // var tierUsuario;
-
         // if (pesoTier <= 50) {
         //     tierUsuario = 'Vinum Miolo';
         // } else if (pesoTier > 50 && pesoTier <= 100) {
@@ -336,11 +389,18 @@
         //     var tempoMeses = 60;
         // }
         // Calcular quanto deixou de perder
-        var perda = 0.2; // Perda de 20%
+
+        var perda = 0.2;
+        // Perda de 20%
+
         var perdaVinho = quantidadeVinhos * perda;
+
         var valorTotalVinho = quantidadeVinhos * valorVinho;
+
         var perdaTotal = perdaVinho * valorVinho;
+
         var valorPerdaTotal = valorTotalVinho - perdaTotal;
+
         var valorInvestimento = valorMensalidade * 12;
 
         // Formatar saída
@@ -348,92 +408,164 @@
         //     style: 'currency',
         //     currency: 'BRL',
         // });
-
-
         // valorMensalidade = formatarMoeda.format(valorMensalidade);
-
         // calc_result.innerHTML = `<br><div id="result" class="conteiner-result"></div>`;
         // result.innerHTML = `<p>Investindo <b>${valorInvestimento}</b> ao todo, sua empresa deixará de ter uma perda significativa!! Iremos evitar a perda de, aproximadamente, <b>${valorPerdaTotal}</b>.</p>`;
         // console.log(pesoTier);
 
-
         calculadora.innerHTML = `<div id="result_tier">
+
                     <div class="planos">
+
             <div class="plano">
+
                 <div class="sombra-header">
+
                     <div class="header-plano" id="miolo">
+
                         <div class="titulo">
+
                             <h2>Miolo</h2>
+
                             <p>Para apaixonados por vinho</p>
+
                         </div>
+
                     </div>
+
                 </div>
+
                 <div class="preco">
-                    <p><b>R$ ${(valorMensalidade * 0.95).toFixed(2)}</b></p>
-                    <h5>p/mês</h5>
-                </div>
-                <div class="body-plano">
+
                     <p>
+                        
+                        <b>R$ ${(valorMensalidade * 0.95).toFixed(2)}</b>
+                        
+                    </p>
+
+                    <h5>p/mês</h5>
+
+                </div>
+
+                <div class="body-plano">
+
+                    <p>
+
                         Investindo R$${valorInvestimento.toFixed(2)} no total em um periodo de 12 meses sua empresa deixará de perder
                         <br><h3><b>R$ ${valorPerdaTotal} ao todo</b><h3>
+                            
                     </p>
+
                     <a href="../login_cadastro/cadastro.html"><button id="miolo-botao">Ver plano</button></a>
+
                 </div>
-                <div class="footer-plano">
+
+                    <div class="footer-plano">
+
                 </div>
+
             </div>
 
             <div class="plano">
+
                 <div class="sombra-header">
+
                     <div class="header-plano">
+
                         <div class="titulo">
+
                             <h2>Castilla</h2>
+
                             <p>Para apaixonados por vinho</p>
+
                         </div>
+
                     </div>
+
                 </div>
+
                 <div class="preco">
-                    <p><b>R$ ${(valorMensalidade * 0.90).toFixed(2)}</b></p>
-                    <h5>p/mês</h5>
-                </div>
-                <div class="body-plano">
+
                     <p>
+                        <b>R$ ${(valorMensalidade * 0.90).toFixed(2)}</b>
+                        
+                    </p>
+
+                    <h5>p/mês</h5>
+
+                </div>
+
+                <div class="body-plano">
+
+                    <p>
+
                         Investindo R$${(valorInvestimento * 3).toFixed(2)} no total em um periodo de 36 meses sua empresa deixará de perder
                         <br><h3><b>R$ ${valorPerdaTotal.toFixed(2) * 3} ao todo</b><h3>
+
                     </p>
+
                     <a href="../login_cadastro/cadastro.html"> <button>Ver plano</button></a>
+
                 </div>
+                
                 <div class="footer-plano">
+
                 </div>
+
             </div>
 
             <div class="plano">
+
                 <div class="sombra-header">
+
                     <div class="header-plano" id="domaine">
+
                         <div class="titulo">
+
                             <h2>Domaine</h2>
+
                             <p>Para apaixonados por vinho</p>
-                        </div>                        
+
+                        </div>      
+
                     </div>
+
                 </div>
+
                 <div class="preco">
-                    <p><b>R$ ${(valorMensalidade * 0.80).toFixed(2)}</b></p>
-                    <h5>p/mês</h5>
-                </div>
-                <div class="body-plano">
+
                     <p>
+
+                        <b>R$ ${(valorMensalidade * 0.80).toFixed(2)}</b>
+
+                    </p>
+
+                    <h5>p/mês</h5>
+
+                </div>
+
+                <div class="body-plano">
+
+                    <p>
+
                         Investindo R$${(valorInvestimento * 5).toFixed(2)} no total em um periodo de 60 meses sua empresa deixará de perder
                         <br><h3><b>R$ ${valorPerdaTotal.toFixed(2) * 5} ao todo</b><h3>
+
                     </p>
+
                     <a href="../login_cadastro/cadastro.html"> <button id="domaine-botao">Ver plano</button></a>
+
                 </div>
-                <div class="footer-plano">
+
+                    <div class="footer-plano">
+
                 </div>
+
             </div>
 
         </div>
+        
             </div>`;
-
 
 
 
@@ -446,15 +578,12 @@
         //      <div class="container-price">
         //          <span class="price">${mensalidade}</span>
         //          <span class="by-month">por mês</span>
-
         //      </div>
         //      <button>Comprar</button>
         //      <p>Investindo <b>${investimento}</b> ao todo, sua empresa deixará de ter uma perda significativa!! Iremos evitar a perda de, aproximadamente, <b>${perdaTotal}</b>.</p>
         //      <br><div id="result" class="conteiner-result"></div>
         //  </div>
         // </div>
-
-
         // <div class="container-tier">
         //   <div class="container-info">
         //       <span class="title-tier">Castilla</span>
@@ -468,8 +597,6 @@
         //       <br><div id="result" class="conteiner-result"></div>
         //   </div>
         // </div>
-
-
         // <div class="container-tier">
         //   <div class="container-info">
         //       <span class="title-tier">Domaine</span>
@@ -487,23 +614,20 @@
 
     }
 
+    // function btn_login() {}
 
-    function btn_login() {
+    // function btn_cadastrar() {}
 
-    }
+    // function entrar() {}
 
-    function btn_cadastrar() {
-
-    }
-
-    function entrar() {
-
-    }
     var navBar = document.querySelector(".navbar");
 
     function mudarCor() {
+
         navBar.classList.toggle("active", scrollY > 120);
+
     }
 
     window.addEventListener("scroll", mudarCor)
+
 </script>
