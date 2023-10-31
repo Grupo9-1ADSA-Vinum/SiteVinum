@@ -1,111 +1,207 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Vinum</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
+
     <div class="header">
+
         <div class="isolada">
+
             <img src="../assets/imagens/icons8-wine-glass-64(1) 1.png">
+
             <h1>Vinum</h1>
+
         </div>
+
         <div class="btn_navbar">
+
             <a href="../login_cadastro/login.html"><button onclick="btn_login()">Login</button></a><br>
+
             <a href="../login_cadastro/cadastro.html"><button onclick="btn_cadastrar()">Cadastrar-se</button></a>
+
         </div>
+
     </div>
 
     <div class="navbar">
+
         <div class="container">
 
             <ul>
+
                 <a href="#home">
+
                     <li>Home</li>
+
                 </a>
+
                 <a href="#sobreNos">
+
                     <li>Sobre nós</li>
+
                 </a>
+
                 <a href="#nossaMissao">
+
                     <li>Nossa Missão</li>
+
                 </a>
+
                 <a href="#calculadora">
+
                     <li>Calculadora Financeira</li>
+
                 </a>
+
                 <a href="#suporte">
+
                     <li>Suporte</li>
+
                 </a>
+
             </ul>
+
         </div>
+
     </div>
+
     <div class="banner" id="home">
+
         <div class="gradient">
+
             <div id="banner_navbar">
+
                 <h1>Deixe seu vinho conosco</h1>
-                <p>O segredo do vinho perfeito está no equilíbrio do clima e da paixão.<br> Nós cuidamos do primeiro, para que você desfrute do segundo.</p>
+
+                <p>
+
+                    O segredo do vinho perfeito está no equilíbrio do clima e da paixão.<br> Nós cuidamos do primeiro,
+                    para que você desfrute do segundo.
+
+                </p>
+
             </div>
+
         </div>
+
     </div>
+
     <div class="sobre">
+
         <div id="image_div_segundaria">
+
             <img src="../assets/imagens/WhatsApp Image 2023-10-24 at 10.33.24.jpeg" alt="">
+
         </div>
+
         <div class="sobre_nos" id="sobreNos">
+
             <div id="texto_nos">
+
                 <h2>Sobre nós</h2>
+
             </div>
+
+
             <div id="texto_sobre">
-                <p>A história da Vinum teve início com um grupo de amigos apaixonados por tecnologia e vinho.
+
+                <p>
+
+                    A história da Vinum teve início com um grupo de amigos apaixonados por tecnologia e vinho.
                     Durante algumas conversas, surgiu a questão de como garantir que os nossos vinhos favoritos
                     chegassem até às nossas taças em perfeitas condições. Foi a partir dessa pergunta que embarcamos na
                     nossa jornada. Dedicamos noites de estudo às complexidades do transporte de vinho, mergulhando nas
                     ciências da temperatura e humidade. Unindo os nossos conhecimentos em tecnologia, criamos os
                     primeiros protótipos de sensores para monitorização de vinho. Valorizamos cada garrafa, e é através
                     delas que a nossa história é contada, assegurando que cada gole seja uma experiência única. A Vinum
-                    é onde a tecnologia se encontra com a tradição, nossas saudações a ti nesta viagem pelo mundo do vinho.
+                    é onde a tecnologia se encontra com a tradição, nossas saudações a ti nesta viagem pelo mundo do
+                    vinho.
+
                 </p>
+
             </div>
+
         </div>
+
     </div>
+
     <div class="social" id="nossaMissao">
+
         <div class="container">
+
             <div class="boxes">
+
                 <div class="box" id="box-missao">
+
                     <img
                         src="../assets/imagens/pngtree-world-and-clock-illustration-in-minimal-style-png-image_9999473.png">
+
                     <h4>MISSÃO</h4>
+
                     <p>
+
                         Nossa missão é proporcionar aos amantes do vinho a tranquilidade de saber que seus tesouros
                         envelhecem nas condições ideais de temperatura e umidade.
+
                     </p>
+
                 </div>
+
                 <div class="box">
-                    <img
-                        src="../assets/imagens/pngtree-light-bulb-with-jigsaw-illustration-in-minimal-style-png-image_10011889.png" id="visao">
+
+                    <img src="../assets/imagens/pngtree-light-bulb-with-jigsaw-illustration-in-minimal-style-png-image_10011889.png"
+                        alt="visao">
+
                     <h4>VISÃO</h4>
+
                     <p>
+
                         Nossa visão é liderar a indústria de monitoramento de adegas de vinho, tornando o armazenamento
                         ideal de vinho acessível a todos. Queremos criar um mundo onde o controle preciso de temperatura
                         e umidade seja tão comum quanto um abridor de vinho na cozinha.
+
                     </p>
+
                 </div>
+
                 <div class="box">
-                    <img src="../assets/imagens/ecoconexao-logotipo-minimalista.png">
+
+                    <img src="../assets/imagens/ecoconexao-logotipo-minimalista.png" alt="Valores">
+
                     <h4>VALORES</h4>
+
                     <p>
-                        <p>Excelência</p>
-                        <p>Confiança</p>
-                        <p>Inovação</p>
-                        <p>Paixão pelo Vinho</p>
+
+                    <p>Excelência</p>
+
+                    <p>Confiança</p>
+
+                    <p>Inovação</p>
+
                     </p>
+
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
 
     <div class="div_quatro" id="calculadora">
         <div class="container">
@@ -120,7 +216,7 @@
             <button class="btn-second" onclick="calcularSimulacao()">Calcular</button>
         </div>
 
-        
+
 
     </div>
     <div class="inicio-footer">
@@ -203,8 +299,8 @@
 
         var valorVinho = Number(inp_valor_vinho.value);
         var quantidadeVinhos = Number(inp_quantidade_vinho.value);;
-    
-        
+
+
         var valorAdega = 1000;
         var quantidadeVinhosNaAdega = 12;
         var porcentagemLucro = 2;
@@ -244,7 +340,7 @@
         var perdaVinho = quantidadeVinhos * perda;
         var valorTotalVinho = quantidadeVinhos * valorVinho;
         var perdaTotal = perdaVinho * valorVinho;
-        var valorPerdaTotal = valorTotalVinho - perdaTotal ;
+        var valorPerdaTotal = valorTotalVinho - perdaTotal;
         var valorInvestimento = valorMensalidade * 12;
 
         // Formatar saída
@@ -253,14 +349,14 @@
         //     currency: 'BRL',
         // });
 
-        
+
         // valorMensalidade = formatarMoeda.format(valorMensalidade);
-        
+
         // calc_result.innerHTML = `<br><div id="result" class="conteiner-result"></div>`;
         // result.innerHTML = `<p>Investindo <b>${valorInvestimento}</b> ao todo, sua empresa deixará de ter uma perda significativa!! Iremos evitar a perda de, aproximadamente, <b>${valorPerdaTotal}</b>.</p>`;
         // console.log(pesoTier);
 
-    
+
         calculadora.innerHTML = `<div id="result_tier">
                     <div class="planos">
             <div class="plano">
@@ -303,7 +399,7 @@
                 <div class="body-plano">
                     <p>
                         Investindo R$${(valorInvestimento * 3).toFixed(2)} no total em um periodo de 36 meses sua empresa deixará de perder
-                        <br><h3><b>R$ ${valorPerdaTotal.toFixed(2)* 3} ao todo</b><h3>
+                        <br><h3><b>R$ ${valorPerdaTotal.toFixed(2) * 3} ao todo</b><h3>
                     </p>
                     <a href="../login_cadastro/cadastro.html"> <button>Ver plano</button></a>
                 </div>
@@ -341,56 +437,56 @@
 
 
 
-// result_tier.innerHTML = `
-// <div class="planos"> 
-// <div class="container-tier">
-//  <div class="container-info">
-//      <span id="miolo" class="title-tier">Miolo</span>
-//      <span class="description-tier"></span>Para aqueles que querem economizar</span>
-//      <div class="container-price">
-//          <span class="price">${mensalidade}</span>
-//          <span class="by-month">por mês</span>
-           
-//      </div>
-//      <button>Comprar</button>
-//      <p>Investindo <b>${investimento}</b> ao todo, sua empresa deixará de ter uma perda significativa!! Iremos evitar a perda de, aproximadamente, <b>${perdaTotal}</b>.</p>
-//      <br><div id="result" class="conteiner-result"></div>
-//  </div>
-// </div>
+        // result_tier.innerHTML = `
+        // <div class="planos"> 
+        // <div class="container-tier">
+        //  <div class="container-info">
+        //      <span id="miolo" class="title-tier">Miolo</span>
+        //      <span class="description-tier"></span>Para aqueles que querem economizar</span>
+        //      <div class="container-price">
+        //          <span class="price">${mensalidade}</span>
+        //          <span class="by-month">por mês</span>
+
+        //      </div>
+        //      <button>Comprar</button>
+        //      <p>Investindo <b>${investimento}</b> ao todo, sua empresa deixará de ter uma perda significativa!! Iremos evitar a perda de, aproximadamente, <b>${perdaTotal}</b>.</p>
+        //      <br><div id="result" class="conteiner-result"></div>
+        //  </div>
+        // </div>
 
 
-// <div class="container-tier">
-//   <div class="container-info">
-//       <span class="title-tier">Castilla</span>
-//       <span class="description-tier"></span>Para aqueles que querem economizar</span>
-//       <div class="container-price">
-//           <span class="price">${(mensalidade * 0.95).toFixed(2)}</span>
-//           <span class="by-month">por mês</span>
-//       </div>
-//       <button>Comprar</button>
-//       <p>Investindo <b>${investimento * 3}</b> ao todo, sua empresa deixará de ter uma perda significativa!! Iremos evitar a perda de, aproximadamente, <b>${perdaTotal}</b>.</p>
-//       <br><div id="result" class="conteiner-result"></div>
-//   </div>
-// </div>
+        // <div class="container-tier">
+        //   <div class="container-info">
+        //       <span class="title-tier">Castilla</span>
+        //       <span class="description-tier"></span>Para aqueles que querem economizar</span>
+        //       <div class="container-price">
+        //           <span class="price">${(mensalidade * 0.95).toFixed(2)}</span>
+        //           <span class="by-month">por mês</span>
+        //       </div>
+        //       <button>Comprar</button>
+        //       <p>Investindo <b>${investimento * 3}</b> ao todo, sua empresa deixará de ter uma perda significativa!! Iremos evitar a perda de, aproximadamente, <b>${perdaTotal}</b>.</p>
+        //       <br><div id="result" class="conteiner-result"></div>
+        //   </div>
+        // </div>
 
 
-// <div class="container-tier">
-//   <div class="container-info">
-//       <span class="title-tier">Domaine</span>
-//       <span class="description-tier"></span>Para aqueles que querem economizar</span>
-//       <div class="container-price">
-//           <span class="price">${(mensalidade * 0.80).toFixed(2)}</span>
-//           <span class="by-month">por mês</span>
-//       </div>
-//       <button>Comprar</button>
-//       <p>Investindo <b>${investimento * 5}</b> ao todo, sua empresa deixará de ter uma perda significativa!! Iremos evitar a perda de, aproximadamente, <b>${perdaTotal}</b>.</p>
-//       <br><div id="result" class="conteiner-result"></div>
-//   </div>
-// </div>
-// </div>`;
-    
-        }
-    
+        // <div class="container-tier">
+        //   <div class="container-info">
+        //       <span class="title-tier">Domaine</span>
+        //       <span class="description-tier"></span>Para aqueles que querem economizar</span>
+        //       <div class="container-price">
+        //           <span class="price">${(mensalidade * 0.80).toFixed(2)}</span>
+        //           <span class="by-month">por mês</span>
+        //       </div>
+        //       <button>Comprar</button>
+        //       <p>Investindo <b>${investimento * 5}</b> ao todo, sua empresa deixará de ter uma perda significativa!! Iremos evitar a perda de, aproximadamente, <b>${perdaTotal}</b>.</p>
+        //       <br><div id="result" class="conteiner-result"></div>
+        //   </div>
+        // </div>
+        // </div>`;
+
+    }
+
 
     function btn_login() {
 
@@ -405,7 +501,7 @@
     }
     var navBar = document.querySelector(".navbar");
 
-    function mudarCor(){
+    function mudarCor() {
         navBar.classList.toggle("active", scrollY > 120);
     }
 
