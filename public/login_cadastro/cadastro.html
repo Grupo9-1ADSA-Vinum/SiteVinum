@@ -1,177 +1,303 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
 
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Cadastro</title>
+
     <link rel="stylesheet" href="styleCadastro.css">
+
     <link rel="stylesheet" href="styleLogin.css">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
 </head>
 
 <body>
+
     <div class="header_login">
+
         <div class="logoDaEmpresa_login">
+
             <div class="container_login">
+
                 <div class="logo">
-                <div class="imgLogo">
-                    <img src="imgs/icons8-wine-glass-64 1.png" alt="">
+
+                    <div class="imgLogo">
+
+                        <img src="imgs/icons8-wine-glass-64 1.png" alt="">
+
+                    </div>
+
+                    <div class="textoLogo">
+
+                        <h1>Vinum</h1>
+
+                    </div>
+
                 </div>
-                <div class="textoLogo">
-                    <h1>Vinum</h1>
-                </div>
-            </div>
+
                 <ul>
+
                     <a href="../Main/index.html">
+
                         <li>Home</li>
+
                     </a>
+
                     <a href="../Main/index.html">
+
                         <li>Suporte</li>
+
                     </a>
+
                     <a href="../Main/index.html">
+
                         <li>Produtos</li>
+
                     </a>
+
                 </ul>
+
             </div>
+
         </div>
+
     </div>
+
     <div class="container">
+
         <div class="content first-content">
+
             <div class="first-column">
+
                 <h2 class="title title-primary">Olá, Amigo!</h2>
+
                 <p class="description description-primary">Caso ja tenha uma conta</p>
+
                 <p class="description description-primary">Aqui clique embaixo</p>
+
                 <a href="../login_cadastro/login.html"><button id="signin" class="btn btn-primary">Login</button></a>
+
             </div>
 
             <div class="second-column">
+
                 <h2 class="title title-second">Cadastrar - se</h2>
-                <div class="social-media">
-                </div>
+
+                <div class="social-media"></div>
+
                 <div class="form">
+
                     <label class="label-input" for="">
+
                         <i class="far fa-user icon-modify"></i>
+
                         <input id="input_nome" type="text" placeholder="nome">
+
                     </label>
 
                     <label class="label-input" for="">
+
                         <i class="far fa-envelope icon-modify"></i>
+
                         <input id="input_email" type="email" placeholder="Email">
+
                     </label>
 
                     <label class="label-input" for="">
+
                         <i class="far fa-envelope icon-modify"></i>
+
                         <input id="input_confi" type="email" placeholder="Confirmar email">
+
                     </label>
 
                     <label class="label-input" for="">
+
                         <i class="far fa-envelope icon-modify"></i>
+
                         <input id="input_cnpj" type="cnpj" placeholder="Digite seu CNPJ">
+
                     </label>
 
                     <label class="label-input" for="">
+
                         <i class="fas fa-lock icon-modify"></i>
+
                         <input id="input_senha" type="password" placeholder="Senha">
+
                     </label>
 
                     <label class="label-input" for="">
+
                         <i class="fas fa-lock icon-modify"></i>
+
                         <input id="input_confi_senha" type="password" placeholder="Confirmar senha">
+
                     </label>
+
                 </div>
 
                 <button onclick="criar()" class="btn btn-second">Criar</button>
 
             </div>
+
         </div>
 
     </div>
+
     </div>
 
     <div class="footer" id="suporte">
+
         <div class="footer1">
+
             <div class="bloco">
+
                 <img src="../assets/imgs/icons8-location-pin-48 1.png">
+
                 <div class="texto">
+
                     <h4 class="titulo-footer">Endereço</h4>
+
                     <h6>Rua Haddock Lobo, 595 São Paulo - SP</h6>
+
                 </div>
+
             </div>
 
             <div class="bloco">
+
                 <img src="../assets/imgs/icons8-phone-48 1.png">
+
                 <div class="texto">
+
                     <h4 class="titulo-footer">Telefone</h4>
+
                     <h6>(11) 3589-4043</h6>
+
                 </div>
+
             </div>
 
             <div class="bloco">
+
                 <img src="../assets/imgs/icons8-email-48 1.png">
+
                 <div class="texto">
+
                     <h4 class="titulo-footer">E-mail</h4>
+
                     <h6>projeto.vinum@sptech.school</h6>
+
                 </div>
+
             </div>
+
         </div>
 
         <div class="pai-linha">
+
             <div class="linha1">
+
                 <div class="footer2">
+
                     <div class="bloco">
+
                         <img src="../assets/imgs/icons8-wine-glass-64 1.png">
+
                         <div class="texto">
+
                             <h3 class="titulo-footer">Vinum</h3>
+
                             <h6>soluções para sua adega</h6>
+
                         </div>
+
                     </div>
 
                     <div class="redes">
+
                         <h5 class="titulo-footer">Nos siga!</h5>
+
                         <div class="imagens">
+
                             <img src="../assets/imgs/icons8-whatsapp-48 1.png">
+
                             <img src="../assets/imgs/icons8-facebook-48 1.png">
+
                             <img src="../assets/imgs/icons8-instagram-48 1.png">
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
 </body>
 
 </html>
 
 <script>
+
     function criar() {
+
         var nome = input_nome.value;
+
         var email = input_email.value;
+
         var confiEmail = input_confi.value;
+
         var senha = input_senha.value;
+
         var confiSenha = input_confi_senha.value;
+
         var dadosCnpj = input_cnpj.value
+
         dadosCnpj = dadosCnpj.length
 
 
         if (nome == "") {
+
             alert('Insira um nome')
-        }
-        else if (senha == confiSenha && email.indexOf("@sptech.school") > -1 && confiEmail.indexOf("@sptech.school") > -1 && email == confiEmail && dadosCnpj == 14) {
+
+        } else if (senha == confiSenha && email.indexOf("@sptech.school") > -1 && confiEmail.indexOf("@sptech.school") > -1 && email == confiEmail && dadosCnpj == 14) {
+
             alert('Usuario Cadastrado com sucesso')
+
             window.location.href = "login.html"
-        }
-        else if (senha == confiSenha && email.indexOf("@hotmail.com") > -1 && confiEmail.indexOf("@hotmail.com") > -1 && email == confiEmail && dadosCnpj == 14) {
+        } else if (senha == confiSenha && email.indexOf("@hotmail.com") > -1 && confiEmail.indexOf("@hotmail.com") > -1 && email == confiEmail && dadosCnpj == 14) {
+
             alert('Usuario Cadastrado com sucesso')
+
             window.location.href = "login.html"
-        }
-        else if (senha == confiSenha && email.indexOf("@gmail.com") > -1 && confiEmail.indexOf("@gmail.com") > -1 && email == confiEmail && dadosCnpj == 14) {
+
+        } else if (senha == confiSenha && email.indexOf("@gmail.com") > -1 && confiEmail.indexOf("@gmail.com") > -1 && email == confiEmail && dadosCnpj == 14) {
+
             alert('Usuario Cadastrado com sucesso')
+
             window.location.href = "login.html"
-        }
-        else {
+
+        } else {
+
             alert('email ou senha invalido, tente novamente');
+
         }
     }
+
 </script>
