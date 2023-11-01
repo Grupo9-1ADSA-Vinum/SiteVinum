@@ -781,3 +781,17 @@ h6 {
     width: 80px;
     height: 40px;
 }
+
+.planos_selecionado{
+    display: flex;
+    justify-content: center;
+}
+
+.planos_selecionado #select_plano_cadastro{
+    background-color: #763A5A;
+    border-radius: 60px;
+    color: #fff;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+}

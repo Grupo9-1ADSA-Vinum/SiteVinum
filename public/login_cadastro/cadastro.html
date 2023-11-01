@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="styleLogin.css">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="../Main/index.html">
 
 </head>
 
@@ -48,23 +49,21 @@
                 <ul>
 
                     <a href="../Main/index.html">
-
+                        
                         <li>Home</li>
 
                     </a>
 
-                    <a href="../Main/index.html">
+                    <a href="#suporte">
 
                         <li>Suporte</li>
 
                     </a>
-
-                    <a href="../Main/index.html">
-
-                        <li>Produtos</li>
+                    <a onclick="ajuda()">
+                        <li>Ajuda</li>
 
                     </a>
-
+                    
                 </ul>
 
             </div>
@@ -144,9 +143,15 @@
                         <input id="input_confi_senha" type="password" placeholder="Confirmar senha">
 
                     </label>
-
+                    <div class="planos_selecionado">
+                        <select name="Selecionar_Plano" id="select_plano_cadastro">
+                            <option value="miolo">Miolo</option>
+                            <option value="castilla">Castilla</option>
+                            <option value="domaine">Domaine</option>
+                    </select></div>
+               
                 </div>
-
+                
                 <button onclick="criar()" class="btn btn-second">Criar</button>
 
             </div>
@@ -298,6 +303,10 @@
             alert('email ou senha invalido, tente novamente');
 
         }
+    }
+
+    function ajuda(){
+        alert(`Caso tenha duvida de qual plano contratar é só voltar para pagina "Home" e ir em "Calculadora"`);
     }
 
 </script>
