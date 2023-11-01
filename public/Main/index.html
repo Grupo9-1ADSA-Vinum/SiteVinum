@@ -282,9 +282,16 @@
         // console.log(pesoTier);
 
     
-        calculadora.innerHTML = `<div id="result_tier">
+        calculadora.innerHTML = `
+        
+            <div id="result_tier">
                     <div class="planos">
+            <div class="opcaoVoltar">
+                <img onclick="imgVoltar()" src="../assets/imagens/WhatsApp Image 2023-10-30 at 20.41.22.jpeg" alt="opcaoParaVoltar">
+            <p style="color:#000"><u>VOLTAR</u></p>
+        </div>
             <div class="plano">
+                
                 <div class="sombra-header">
                     <div class="header-plano" id="miolo">
                         <div class="titulo">
@@ -411,6 +418,37 @@
 // </div>`;
     
         }
+
+        function imgVoltar(){
+        calculadora.innerHTML = `
+        <div class="container">
+            <h2 class="titulo">V I N U M</h2>
+
+            <p>Valor estimado dos vinhos produzidos:</p>
+            <input type="text" id="inp_valor_vinho">
+
+            <p>Quantidade de vinhos que estarão nas adegas:</p>
+            <input type="text" id="inp_quantidade_vinho">
+
+            <button class="btn-second" onclick="calcularSimulacao()">Calcular</button>
+        </div>
+
+        <div class="indicandoCalculadora">
+            <h2>Simule o melhor plano para o seu negocio!!</h2><br>
+            <p>No nosso simulador, você consegue ver o melhor valor para o seu negocio,<br>
+                Inserindo o valor do vinho desejado<br> e colocando o valor em media que será vendido,<br>
+                você consegue analisar em até 3 planos diferentes<br>
+                para o seu negocio sendo eles: <b><u>Miolo, Castilla e Domaine.</u></b></p><br>
+            <p id="exCalculadora">
+                Com o valor informado do vinho e a sua quantidate, nós calculamos em media<br>
+                quantos vinhos são perdidos por transportes por causa da sua temperatura e umidade,<br>
+                assim conseguimos colocar em 3 planos de serviços com valores variados<br>
+                para que possa ter mais opções de escolhas  
+            </p>
+        </div>
+
+    </div>`;
+    }
     
 
     function btn_login() {
@@ -431,4 +469,6 @@
     }
 
     window.addEventListener("scroll", mudarCor)
+
+    
 </script>
