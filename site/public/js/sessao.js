@@ -7,7 +7,7 @@ function validarSessao() {
     var b_usuario = document.getElementById("b_usuario");
     var b_cnpj_usuario = document.getElementById("b_cnpj_usuario");
 
-    if (email != null && nome != null && cpf != null) {
+    if (email != null && nome != null && cnpj != null) {
         b_usuario.innerHTML = nome;
         b_cnpj_usuario.innerHTML = cnpj;
     } else {

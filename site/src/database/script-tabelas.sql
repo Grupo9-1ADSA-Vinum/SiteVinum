@@ -18,7 +18,7 @@ razaoSocial varchar(20) not null,
 CNPJ char(14) not null unique,
 telefone varchar(15),
 email varchar(30),
-senha vachar(30),
+senha varchar(30),
 fkAssinaturas int not null,
 constraint fkAssinaturas foreign key (fkAssinaturas) 
 references assinaturas(idAssinaturas)

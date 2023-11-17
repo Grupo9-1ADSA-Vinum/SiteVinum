@@ -7,7 +7,7 @@ function buscarPorId(id) {
 }
 
 function listar() {
-  var query = `select * from distribuidora join assinaturas on fkAssinaturas = idAssinaturas`;
+  var query = `select * from distribuidora`;
 
   return database.executar(query);
 }
@@ -18,8 +18,8 @@ function buscarPorCnpj(cnpj) {
   return database.executar(query);
 }
 // razaoSocial, cnpj, nomeFantasia, telefone, senha, email
-function cadastrar(razaoSocial, cnpj, nomeFantasia, telefone, senha, email, plano) {
-  var query = `insert into distribuidora (razaoSocial, CNPJ, nomeFantasia, telefone, email, senha, fkAssinaturas) values ('${nomeFantasia}','${razaoSocial}', '${cnpj}','${telefone}','${senha}','${email}', '${plano}')`;
+function cadastrar(nomeFantasia,razaoSocial, cnpj , telefone, email, plano, senha) {
+  var query = `insert into distribuidora (nomeFantasia, razaoSocial, CNPJ, telefone,  email, fkAssinaturas, senha) values ('${nomeFantasia}','${razaoSocial}', '${cnpj}','${telefone}','${email}', '${plano}','${senha}')`;
 
   return database.executar(query);
 }

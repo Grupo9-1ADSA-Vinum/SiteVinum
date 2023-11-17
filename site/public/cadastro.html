@@ -99,14 +99,17 @@
 
                     <div class="planos_selecionado">
                         <select name="Selecionar_Plano" id="select_plano_cadastro">
-                            <!-- <option value="miolo">Miolo</option>
-                            <option value="castilla">Castilla</option>
-                            <option value="domaine">Domaine</option> -->
+                            <!-- <option value="1">Miolo</option>
+                            <option value="2">Castilla</option>
+                            <option value="3">Domaine</option> -->
                         </select>
 
                     </div>
                 </div>
                 <button onclick="cadastrar()" class="btn btn-second">Criar</button>
+            </div>
+            <div id="div_aguardar" class="loading-div">
+                <!-- <img src="assets/imgs/colocarGif" id="loading-gif"> -->
             </div>
         </div>
     </div>
@@ -266,13 +269,13 @@
     }
 
     function listar() {
-        fetch("/empresas/listar", {
+        fetch("/planos/listar", {
             method: "GET",
         })
             .then(function (resposta) {
-                resposta.json().then((empresas) => {
-                    empresas.forEach((empresa) => {
-                        select_plano_cadastro.innerHTML += `<option value='${empresa.id}'>${empresa.plano}</option>`;
+                resposta.json().then((planos) => {
+                    planos.forEach((planos) => {
+                        select_plano_cadastro.innerHTML += `<option value='${planos.idAssinaturas}'>${planos.nomeAssinatura}</option>`;
                     });
                 });
             })
