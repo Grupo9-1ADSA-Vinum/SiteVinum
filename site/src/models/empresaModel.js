@@ -1,25 +1,25 @@
 var database = require("../database/config");
 
 function buscarPorId(id) {
-  var query = `select * from empresa where id = '${id}'`;
+  var query = `select * from distribuidora where id = '${id}'`;
 
   return database.executar(query);
 }
 
 function listar() {
-  var query = `select * from empresa`;
+  var query = `select * from distribuidora join assinaturas on fkAssinaturas = idAssinaturas`;
 
   return database.executar(query);
 }
 
 function buscarPorCnpj(cnpj) {
-  var query = `select * from empresa where cnpj = '${cnpj}'`;
+  var query = `select * from distribuidora where cnpj = '${cnpj}'`;
 
   return database.executar(query);
 }
-
-function cadastrar(razaoSocial, cnpj) {
-  var query = `insert into empresa (razao_social, cnpj) values ('${razaoSocial}', '${cnpj}')`;
+// razaoSocial, cnpj, nomeFantasia, telefone, senha, email
+function cadastrar(razaoSocial, cnpj, nomeFantasia, telefone, senha, email, plano) {
+  var query = `insert into distribuidora (razaoSocial, CNPJ, nomeFantasia, telefone, email, senha, fkAssinaturas) values ('${nomeFantasia}','${razaoSocial}', '${cnpj}','${telefone}','${senha}','${email}', '${plano}')`;
 
   return database.executar(query);
 }
