@@ -117,9 +117,6 @@ body {
     color: #763A5A;
 }
 
-a:hover {
-    color: #763A5A;
-}
 
 .first-content {
     display: flex;
@@ -628,6 +625,32 @@ input:-webkit-autofill {
     width: 150px;
     height: 50px;
     font-size: 20px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown img {
+    width: 40px;
+    height: 40px;
+}
+
+.dropdown_conteudo {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    width: 160px;
+    z-index: 2;
+}
+
+.dropdown_conteudo a {
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown_conteudo{
+    display: block;
 }
 
 .container1 {
