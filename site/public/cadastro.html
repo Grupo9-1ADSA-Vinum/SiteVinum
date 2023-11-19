@@ -88,6 +88,11 @@
                     </label>
 
                     <label class="label-input" for="">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input id="confirmacao_email_input" type="email" placeholder=" Confirmar E-mail">
+                    </label>
+
+                    <label class="label-input" for="">
                         <i class="fas fa-lock icon-modify"></i>
                         <input id="senha_input" type="password" placeholder="Senha">
                     </label>
@@ -174,6 +179,7 @@
         var cnpjVar = cnpj_input.value;
         var telefoneVar = telefone_input.value;
         var emailVar = email_input.value;
+        var confirmacaoEmailVar = confirmacao_email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
         var empresaVar = select_plano_cadastro.value;
@@ -181,6 +187,7 @@
             nomeFantasiaVar == "" ||
             cnpjVar == "" ||
             emailVar == "" ||
+            confirmacaoEmailVar == "" ||
             senhaVar == "" ||
             confirmacaoSenhaVar == "" ||
             empresaVar == ""
