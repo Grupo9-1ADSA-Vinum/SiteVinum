@@ -15,7 +15,7 @@
     <script src="../js/sessao.js"></script>
 </head>
 
-<body>
+<body onload="listar()">
 
     <div class="header_login">
         <div class="logoDaEmpresa_login">
@@ -66,22 +66,25 @@
 
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
-                        <input id="nome_input" type="text" placeholder="nome">
+                        <input id="nomeFantasia_input" type="text" placeholder="Nome Fantasia">
+                    </label>
+
+                    <label class="label-input" for="">
+                        <i class="far fa-user icon-modify"></i>
+                        <input id="razaoSocial_input" type="text" placeholder="Razão Social">
                     </label>
 
                     <label class="label-input" for="">
                         <i class="far fa-envelope icon-modify"></i>
-                        <input id="email_input" type="email" placeholder="Email">
+                        <input id="cnpj_input" type="cnpj" placeholder=" CNPJ">
                     </label>
-
                     <label class="label-input" for="">
                         <i class="far fa-envelope icon-modify"></i>
-                        <input id="input_confi_email" type="email" placeholder="Confirmar email">
+                        <input id="telefone_input" type="telefone" placeholder=" Número de Telefone">
                     </label>
-
                     <label class="label-input" for="">
                         <i class="far fa-envelope icon-modify"></i>
-                        <input id="cnpj_input" type="cnpj" placeholder="Digite seu CNPJ">
+                        <input id="email_input" type="email" placeholder=" E-mail">
                     </label>
 
                     <label class="label-input" for="">
@@ -96,14 +99,17 @@
 
                     <div class="planos_selecionado">
                         <select name="Selecionar_Plano" id="select_plano_cadastro">
-                            <option value="miolo">Miolo</option>
-                            <option value="castilla">Castilla</option>
-                            <option value="domaine">Domaine</option>
+                            <!-- <option value="1">Miolo</option>
+                            <option value="2">Castilla</option>
+                            <option value="3">Domaine</option> -->
                         </select>
 
                     </div>
                 </div>
                 <button onclick="cadastrar()" class="btn btn-second">Criar</button>
+            </div>
+            <div id="div_aguardar" class="loading-div">
+                <!-- <img src="assets/imgs/colocarGif" id="loading-gif"> -->
             </div>
         </div>
     </div>
@@ -163,16 +169,17 @@
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
-        var nomeVar = nome_input.value;
-        var emailVar = email_input.value;
-        var emailConfiVar = input_confi_email.value;
+        var nomeFantasiaVar = nomeFantasia_input.value;
+        var razaoSocialVar = razaoSocial_input.value;
         var cnpjVar = cnpj_input.value;
+        var telefoneVar = telefone_input.value;
+        var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
-        var planoVar = select_plano_cadastro.value
+        var empresaVar = select_plano_cadastro.value;
         if (
-            nomeVar == "" ||
-            cpfVar == "" ||
+            nomeFantasiaVar == "" ||
+            cnpjVar == "" ||
             emailVar == "" ||
             senhaVar == "" ||
             confirmacaoSenhaVar == "" ||
@@ -185,24 +192,10 @@
             finalizarAguardar();
             return false;
 
-        } else if (nomeVar.length <= 1) {
+        } else if (nomeFantasiaVar.length <= 1) {
             cardErro.style.display = "block";
             mensagem_erro.innerHTML =
                 "(Insira um nome maior que 1 letra)";
-            finalizarAguardar();
-            return false;
-
-        } else if (emailVar.indexOf('@') == -1 && emailVar.indexOf('.') == -1) {
-            cardErro.style.display = "block";
-            mensagem_erro.innerHTML =
-                "(Email é necessario ter @ e .)";
-            finalizarAguardar();
-            return false;
-
-        } else if (emailVar == emailConfiVar) {
-            cardErro.style.display = "block";
-            mensagem_erro.innerHTML =
-                "(O Email deve ser igual o primeiro)";
             finalizarAguardar();
             return false;
 
@@ -223,7 +216,7 @@
         } else if (cnpjVar.length < 14) {
             cardErro.style.display = "block";
             mensagem_erro.innerHTML =
-                "(Digite um CPF válido de até 11 digitos)";
+                "(Digite um cnpj válido de até 11 digitos)";
             finalizarAguardar();
             return false;
         } else {
@@ -231,7 +224,7 @@
         }
 
         // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
+        fetch("/empresas/cadastrar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -239,8 +232,10 @@
             body: JSON.stringify({
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
-                cnpjServer: cpfVar,
+                nomeFantasiaServer: nomeFantasiaVar,
+                razaoSocialServer: razaoSocialVar,
+                telefoneServer: telefoneVar,
+                cnpjServer: cnpjVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
                 planoServer: empresaVar
@@ -274,13 +269,13 @@
     }
 
     function listar() {
-        fetch("/empresas/listar", {
+        fetch("/planos/listar", {
             method: "GET",
         })
             .then(function (resposta) {
-                resposta.json().then((empresas) => {
-                    empresas.forEach((empresa) => {
-                        listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+                resposta.json().then((planos) => {
+                    planos.forEach((planos) => {
+                        select_plano_cadastro.innerHTML += `<option value='${planos.idAssinaturas}'>${planos.nomeAssinatura}</option>`;
                     });
                 });
             })

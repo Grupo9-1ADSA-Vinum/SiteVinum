@@ -5,6 +5,7 @@ use VinumSprint3;
 
 create table assinaturas (
 idAssinaturas int primary key auto_increment,
+nomeAssinatura varchar(50),
 duracaoMeses int,
 constraint ckduracaomeses check (duracaoMeses in (12, 36, 60)),
 preco float
@@ -17,6 +18,7 @@ razaoSocial varchar(20) not null,
 CNPJ char(14) not null unique,
 telefone varchar(15),
 email varchar(30),
+senha varchar(30),
 fkAssinaturas int not null,
 constraint fkAssinaturas foreign key (fkAssinaturas) 
 references assinaturas(idAssinaturas)
@@ -39,7 +41,7 @@ references distribuidora(idDistribuidora)
 create table usuario (
 idUsuario int primary key auto_increment,
 nomeUser varchar(30),
-email varchar(50) not null,
+-- email varchar(50) not null, tirar email do usuario
 senha varchar(30) not null,
 fkDistribuidora int not null,
 constraint fkdistribuidoraUsuario foreign key (fkDistribuidora) references distribuidora(idDistribuidora)
@@ -92,9 +94,9 @@ constraint fkSensor foreign key (fkSensor)
 references sensor(idSensor));
 
 insert into assinaturas values
-(null, 12, 999.99),
-(null, 36, 2399.99),
-(null, 60, 4999.99);
+(null, 12),
+(null, 36),
+(null, 60);
 
 insert into distribuidora(idDistribuidora, nomeFantasia, razaoSocial, CNPJ, telefone, email, fkAssinaturas) values
 (null, 'Empresa A','Distribuidora A ltda','00000000009301','5511900001111','contato@empresaA.com', 3),

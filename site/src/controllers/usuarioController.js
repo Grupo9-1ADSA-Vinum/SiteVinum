@@ -27,7 +27,6 @@ function autenticar(req, res) {
                                         id: resultadoAutenticar[0].id,
                                         email: resultadoAutenticar[0].email,
                                         nome: resultadoAutenticar[0].nome,
-                                        cpf: resultadoAutenticar[0].cpf,
                                         senha: resultadoAutenticar[0].senha,
                                     });
                                 } else {
@@ -53,7 +52,7 @@ function autenticar(req, res) {
 
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var nome = req.body.nomeServer;
+    var nome = req.body.nomeFantasiaServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
     var empresaId = req.body.empresaServer;
@@ -69,7 +68,7 @@ function cadastrar(req, res) {
     } else if (empresaId == undefined) {
         res.status(400).send("Sua empresa está undefined!");
     } else if (cnpj == undefined) {
-        res.status(400).send("Seu CPF está undefined!");
+        res.status(400).send("Seu cnpj está undefined!");
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
