@@ -65,7 +65,7 @@ function autenticar(req, res) {
           if (resultadoAutenticar.length == 1) {
             console.log(resultadoAutenticar);
 
-            empresaModel.autenticar(resultadoAutenticar[0].empresaId)
+            empresaModel.autenticar(resultadoAutenticar[0].email, resultadoAutenticar[0].senha)
               .then((resultadoAutenticar) => {
                 if (resultadoAutenticar.length == 0) {
                   res.status(400).send("Email e/ou senha inválido(s)")

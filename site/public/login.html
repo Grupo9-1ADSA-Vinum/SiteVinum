@@ -278,14 +278,12 @@
                 console.log(resposta);
 
                 resposta.json().then(res => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
                     sessionStorage.setItem('email', res[0].email);
                     sessionStorage.setItem('senha', res[0].senha);
 
                     setTimeout(function () {
-                        window.location = "site/public/dashboard.html";
-                    }, 2000); // apenas para exibir o loading
+                        window.location = "dashboard.html";
+                    }, 1200); // apenas para exibir o loading
 
                 });
 
