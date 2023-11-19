@@ -38,11 +38,57 @@ function cadastrar(req, res) {
         .status(401)
         .json({ mensagem: `a empresa com o cnpj ${cnpj} já existe` });
     } else {
-      empresaModel.cadastrar(nomeFantasia,razaoSocial, cnpj , telefone, email, plano, senha).then((resultado) => {
+      empresaModel.cadastrar(nomeFantasia, razaoSocial, cnpj, telefone, email, plano, senha).then((resultado) => {
         res.status(201).json(resultado);
       });
     }
   });
+}
+
+function autenticar(req, res) {
+  var senha = req.body.senhaServer;
+  var email = req.body.emailServer;
+  
+
+  if (email == undefined) {
+    res.status(400).send("Seu email está indefinida!");
+  } else if (senha == undefined) {
+    res.status(400).send("Sua senha está indefinida!");
+  } else {
+
+    empresaModel.autenticar(email, senha)
+      .then(
+        function (resultadoAutenticar) {
+          console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
+          console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
+
+          if (resultadoAutenticar.length == 1) {
+            console.log(resultadoAutenticar);
+
+            empresaModel.autenticar(resultadoAutenticar[0].empresaId)
+              .then((resultadoAutenticar) => {
+                if (resultadoAutenticar.length == 0) {
+                  res.status(400).send("Email e/ou senha inválido(s)")
+                } else {
+                  // res.json({
+                  //   id: resultadoAutenticar[0].id,
+                  //   email: resultadoAutenticar[0].email,
+                  //   senha: resultadoAutenticar[0].senha,
+                  // });
+                  res.status(201).json(resultadoAutenticar);
+                }
+              })
+          }
+        }
+      ).catch(
+        function (erro) {
+          console.log(erro);
+          console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+          res.status(500).json(erro.sqlMessage);
+        }
+      );
+  }
+
 }
 
 module.exports = {
@@ -50,4 +96,5 @@ module.exports = {
   buscarPorId,
   cadastrar,
   listar,
+  autenticar
 };

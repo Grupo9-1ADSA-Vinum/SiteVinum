@@ -11,6 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Login</title>
+    <script src="js/sessao.js"></script>
 
     <link rel="stylesheet" href="style.css">
 
@@ -71,7 +72,10 @@
         </div>
 
     </div>
-
+    <div class="alerta_erro">
+    <div class="card_erro" id="cardErro">
+      <span id="mensagem_erro"></span>
+    </div>
     <div class="container">
 
         <div class="content first-content">
@@ -228,27 +232,81 @@
 
     function entrar() {
 
-        var email = input_email.value;
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+        // fetch("/usuarios/autenticar", {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify({
+        //         nomeUsuarioServer: input_email,
+        //         senhaServer: input_senha
+        //     }),
+        // })
+        //     .then(function (resposta) {
 
-        var senha = input_senha.value;
+        //         if (resposta.status == 201) {
+        //             resposta.json().then(res => {
+        //                 sessionStorage.setItem('idUsuario', res[0].idUsuario);
+        //                 sessionStorage.setItem('nomeUsuario', res[0].nomeUsuario);
+        //                 window.location = 'dashboard.html';
+        //             })
 
-        if (senha == "123" && email.indexOf("@sptech.school") > -1) {
+        //         } else {
+        //             resposta.text().then(texto => {
+        //                 alerta_erro.style.display = 'block';
+        //                 cardErro.style.display = 'flex';
+        //                 mensagem_erro.innerHTML = texto;
+        //             });
+        //         }
+        //     })    
 
-            window.location.href = "dashboard.html"
+    fetch("/empresas/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
 
-        } else if (senha == "123" && email.indexOf("@hotmail.com") > -1) {
+            if (resposta.status == 201) {
+                console.log(resposta);
 
-            window.location.href = "dashboard.html"
+                resposta.json().then(res => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.setItem('email', res[0].email);
+                    sessionStorage.setItem('senha', res[0].senha);
 
-        } else if (senha == "123" && email.indexOf("@gmail.com") > -1) {
+                    setTimeout(function () {
+                        window.location = "site/public/dashboard.html";
+                    }, 2000); // apenas para exibir o loading
 
-            window.location.href = "dashboard.html"
+                });
 
-        } else {
+            } else {
 
-            alert('Senha ou email inválidos')
+                console.log("Houve um erro ao tentar realizar o login!");
 
-        }
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
     }
 
 </script>

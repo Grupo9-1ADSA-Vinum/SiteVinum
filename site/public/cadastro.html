@@ -226,6 +226,12 @@
                 "(Digite um cnpj válido de até 11 digitos)";
             finalizarAguardar();
             return false;
+        } else if(emailVar != confirmacaoEmailVar){
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+                "(Os E-mails não coincidem)";
+            finalizarAguardar();
+            return false;
         } else {
             setInterval(sumirMensagem, 5000);
         }

@@ -1,14 +1,14 @@
 // sessão
 function validarSessao() {
     var email = sessionStorage.EMAIL_USUARIO;
-    var nome = sessionStorage.NOME_USUARIO;
+    var senha = sessionStorage.SENHA_USUARIO;
     var cnpj = sessionStorage.CNPJ_USUARIO;
 
     var b_usuario = document.getElementById("b_usuario");
     var b_cnpj_usuario = document.getElementById("b_cnpj_usuario");
 
-    if (email != null && nome != null && cnpj != null) {
-        b_usuario.innerHTML = nome;
+    if (email != null && senha != null && cnpj != null) {
+        b_usuario.innerHTML = senha;
         b_cnpj_usuario.innerHTML = cnpj;
     } else {
         window.location = "../login.html";

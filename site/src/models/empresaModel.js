@@ -23,5 +23,11 @@ function cadastrar(nomeFantasia,razaoSocial, cnpj , telefone, email, plano, senh
 
   return database.executar(query);
 }
-
-module.exports = { buscarPorCnpj, buscarPorId, cadastrar, listar };
+function autenticar(email, senha) {
+  var instrucao = `
+      SELECT idDistribuidora, nomeFantasia, CNPJ, telefone, email, fkAssinaturas, senha FROM distribuidora WHERE email = '${email}' AND senha = '${senha}';
+  `;
+  console.log("Executando a instrução SQL: \n" + instrucao);
+  return database.executar(instrucao);
+}
+module.exports = { buscarPorCnpj, buscarPorId, cadastrar, listar, autenticar};
