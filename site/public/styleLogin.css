@@ -4,7 +4,7 @@
 }
 
 .logoDaEmpresa_login{
-    background-color: #754c5a;
+    background-color: #763A5A;
     
 }
 
@@ -48,9 +48,9 @@ li::after {
     background-color: #ffc4fb;
 }
 
-li:hover{
+/* li:hover{ 
     color: #ffc4fb;
-}
+} */
 
 li:hover::after {
     transform: scaleX(1);

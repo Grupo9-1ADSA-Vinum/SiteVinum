@@ -47,77 +47,79 @@
 
     <div class="alerta_erro">
         <div class="card_erro" id="cardErro">
-          <span id="mensagem_erro"></span>
+            <span id="mensagem_erro"></span>
         </div>
 
-    <div class="container">
-        <div class="content first-content">
-            <div class="first-column">
-                <h2 class="title title-primary">Olá, Amigo!</h2>
-                <p class="description description-primary">Caso ja tenha uma conta</p>
-                <p class="description description-primary">Aqui clique embaixo</p>
-                <a href="login.html"><button id="signin" class="btn btn-primary">Login</button></a>
-            </div>
+        <div class="container">
+            <div class="content first-content">
+                <div class="first-column">
+                    <h2 class="title title-primary">Olá, Amigo!</h2>
+                    <p class="description description-primary">Caso ja tenha uma conta</p>
+                    <p class="description description-primary">Aqui clique embaixo</p>
+                    <a href="login.html"><button id="signin" class="btn btn-primary">Login</button></a>
+                </div>
 
-            <div class="second-column">
-                <h2 class="title title-second">Cadastrar - se</h2>
-                <div class="social-media"></div>
-                <div class="form">
+                <div class="second-column">
+                    <h2 class="title title-second">Cadastrar - se</h2>
+                    <div class="social-media"></div>
+                    <div class="form">
 
-                    <label class="label-input" for="">
-                        <i class="far fa-user icon-modify"></i>
-                        <input id="nomeFantasia_input" type="text" placeholder="Nome Fantasia">
-                    </label>
+                        <label class="label-input" for="">
+                            <i class="far fa-user icon-modify"></i>
+                            <input id="nomeFantasia_input" type="text" placeholder="Nome Fantasia">
+                        </label>
 
-                    <label class="label-input" for="">
-                        <i class="far fa-user icon-modify"></i>
-                        <input id="razaoSocial_input" type="text" placeholder="Razão Social">
-                    </label>
+                        <label class="label-input" for="">
+                            <i class="far fa-user icon-modify"></i>
+                            <input id="razaoSocial_input" type="text" placeholder="Razão Social">
+                        </label>
 
-                    <label class="label-input" for="">
-                        <i class="far fa-envelope icon-modify"></i>
-                        <input id="cnpj_input" type="cnpj" placeholder=" CNPJ">
-                    </label>
-                    <label class="label-input" for="">
-                        <i class="far fa-envelope icon-modify"></i>
-                        <input id="telefone_input" type="telefone" placeholder=" Número de Telefone">
-                    </label>
-                    <label class="label-input" for="">
-                        <i class="far fa-envelope icon-modify"></i>
-                        <input id="email_input" type="email" placeholder=" E-mail">
-                    </label>
+                        <label class="label-input" for="">
+                            <i class="far fa-envelope icon-modify"></i>
+                            <input id="cnpj_input" type="cnpj" placeholder=" CNPJ">
+                        </label>
 
-                    <label class="label-input" for="">
-                        <i class="far fa-envelope icon-modify"></i>
-                        <input id="confirmacao_email_input" type="email" placeholder=" Confirmar E-mail">
-                    </label>
+                        <label class="label-input" for="">
+                            <i class="far fa-envelope icon-modify"></i>
+                            <input id="telefone_input" type="telefone" placeholder=" Número de Telefone">
+                        </label>
+                        
+                        <label class="label-input" for="">
+                            <i class="far fa-envelope icon-modify"></i>
+                            <input id="email_input" type="email" placeholder=" E-mail">
+                        </label>
 
-                    <label class="label-input" for="">
-                        <i class="fas fa-lock icon-modify"></i>
-                        <input id="senha_input" type="password" placeholder="Senha">
-                    </label>
+                        <label class="label-input" for="">
+                            <i class="far fa-envelope icon-modify"></i>
+                            <input id="confirmacao_email_input" type="email" placeholder=" Confirmar E-mail">
+                        </label>
 
-                    <label class="label-input" for="">
-                        <i class="fas fa-lock icon-modify"></i>
-                        <input id="confirmacao_senha_input" type="password" placeholder="Confirmar senha">
-                    </label>
+                        <label class="label-input" for="">
+                            <i class="fas fa-lock icon-modify"></i>
+                            <input id="senha_input" type="password" placeholder="Senha">
+                        </label>
 
-                    <div class="planos_selecionado">
-                        <select name="Selecionar_Plano" id="select_plano_cadastro">
-                            <!-- <option value="1">Miolo</option>
+                        <label class="label-input" for="">
+                            <i class="fas fa-lock icon-modify"></i>
+                            <input id="confirmacao_senha_input" type="password" placeholder="Confirmar senha">
+                        </label>
+
+                        <div class="planos_selecionado">
+                            <select name="Selecionar_Plano" id="select_plano_cadastro">
+                                <!-- <option value="1">Miolo</option>
                             <option value="2">Castilla</option>
                             <option value="3">Domaine</option> -->
-                        </select>
+                            </select>
 
+                        </div>
                     </div>
+                    <button onclick="cadastrar()" class="btn btn-second">Criar</button>
                 </div>
-                <button onclick="cadastrar()" class="btn btn-second">Criar</button>
-            </div>
-            <div id="div_aguardar" class="loading-div">
-                <!-- <img src="assets/imgs/colocarGif" id="loading-gif"> -->
+                <div id="div_aguardar" class="loading-div">
+                    <!-- <img src="assets/imgs/colocarGif" id="loading-gif"> -->
+                </div>
             </div>
         </div>
-    </div>
     </div>
     <div class="footer" id="suporte">
         <div class="footer1">
@@ -160,7 +162,7 @@
                             <img src="assets/imgs/icons8-facebook-48 1.png">
                             <img src="assets/imgs/icons8-instagram-48 1.png">
                             <a href="https://github.com/Vinum-Grupo8-1ADSA"><img src="assets/imgs/github (1).png"
-                                onclick="grupoGit()"></a>
+                                    onclick="grupoGit()"></a>
                         </div>
                     </div>
                 </div>
@@ -228,7 +230,7 @@
                 "(Digite um cnpj válido de até 11 digitos)";
             finalizarAguardar();
             return false;
-        } else if(emailVar != confirmacaoEmailVar){
+        } else if (emailVar != confirmacaoEmailVar) {
             cardErro.style.display = "block";
             mensagem_erro.innerHTML =
                 "(Os E-mails não coincidem)";

@@ -1,0 +1,67 @@
+    .container_cadastroDelete {
+        display: flex;
+        justify-content: center;
+        background-color: lightgray;
+    }
+
+    .colunaCadastro h2 {
+        margin-top: 30px;
+    }
+
+    .colunaCadastro {
+        width: 500px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        border-radius: 40px 0px 0px 40px;
+        margin: 10px 0 10px;
+        box-shadow: 10px 5px 5px gray;
+    }
+
+    .container_cadastroDelete button {
+        border-radius: 15px;
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        width: 200px;
+        height: 30px;
+        align-self: center;
+        border: none;
+        margin-top: 1rem;
+        background-color: #763A5A;
+        margin-bottom: 30px;
+        text-align: center;
+        transition: 0.5s;
+    }
+
+    .colunaDeletar{
+        width: 500px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        background-color: #763A5A;
+        border-radius: 0px 40px 40px 0px;
+        margin: 10px 0px 10px;
+        box-shadow: 10px 5px 5px gray;
+    }
+
+    .colunaDeletar button {
+        background-color: #fff;
+        color: #763A5A;
+    }
+
+    .colunaCadastro button:hover {
+        background-color: rgb(132, 69, 103);
+        color:#e6e3e3;
+        font-size: small;
+    }
+
+    .colunaDeletar button:hover {
+        background-color: #e6e3e3;
+        font-size: small;
+    }
