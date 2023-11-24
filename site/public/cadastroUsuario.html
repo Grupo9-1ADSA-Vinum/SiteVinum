@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro</title>
     <link rel="stylesheet" href="styleCadastroUsuario.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="index.html">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <script src="js/sessao.js"></script>
 </head>
 
-<body>
+<body onload="listarUsuarios()">
     <div class="header" style="background-color: #763A5A;">
         <div class="isolada">
             <img src="assets/imgs/icons8-wine-glass-64 1.png" alt="">
@@ -51,7 +54,7 @@
 
                 <label class="label-input" for="">
                     <i class="far fa-envelope icon-modify"></i>
-                    <input id="confirmacao_emailUsuario_input" type="email" placeholder="Confirmar E-mail">
+                    <input id="confirmacao_email_input" type="email" placeholder="Confirmar E-mail">
                 </label>
 
                 <label class="label-input" for="">
@@ -61,7 +64,7 @@
 
                 <label class="label-input" for="">
                     <i class="fas fa-lock icon-modify"></i>
-                    <input id="confirmacao_senhaUsuario_input" type="password" placeholder="Confirmar senha">
+                    <input id="confirmacao_senha_input" type="password" placeholder="Confirmar senha">
                 </label>
 
                 <button onclick="cadastrarUsuarios()">Cadastrar</button>
@@ -70,12 +73,13 @@
         <div class="colunaDeletar">
             <h2 class="cadastrar">Delete um usuário!</h2>
             <div class="form">
-                <label class="label-input" for="">
-
-                    <i class="far fa-user icon-modify"></i>
-                    <input id="cpf_input" type="text" placeholder="CPF">
-                </label>
-
+                <div class="planos_selecionado">
+                    <select name="Selecionar_Plano" id="selecionar_usuario_input">
+                        <!-- <option value="1">Miolo</option>
+                    <option value="2">Castilla</option>
+                    <option value="3">Domaine</option> -->
+                    </select>
+                    </div>
                 <label class="label-input" for="">
                     <i class="fas fa-lock icon-modify"></i>
                     <input id="senha_input" type="password" placeholder="Sua senha">
@@ -125,8 +129,8 @@
                             <img src="assets/imgs/icons8-whatsapp-48 1.png">
                             <img src="assets/imgs/icons8-facebook-48 1.png">
                             <img src="assets/imgs/icons8-instagram-48 1.png">
-                            <a href="https://github.com/Vinum-Grupo8-1ADSA"><img src="assets/imgs/github (1).png"
-                                    onclick="grupoGit()"></a>
+                            <a href="https://github.com/Vinum-Grupo8-1ADSA">
+                                <img src="assets/imgs/github (1).png"></a>
                         </div>
                     </div>
                 </div>
@@ -137,3 +141,133 @@
 </body>
 
 </html>
+<script>
+        function cadastrar() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeUsuarioVar = nomeUsuario_input.value;
+        var cpfVar = cpf_input.value;
+        var emailVar = emailUsuario_input.value;
+        var confirmacaoEmailVar = confirmacao_email_input.value;
+        var senhaVar = senhaUsuario_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        if (
+            cpfVar == "" ||
+            emailVar == "" ||
+            confirmacaoEmailVar == "" ||
+            senhaVar == "" ||
+            confirmacaoSenhaVar == "" ||
+            empresaVar == ""
+        ) {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+                "(Mensagem de erro para todos os campos em branco)";
+
+            finalizarAguardar();
+            return false;
+
+        } else if (nomeUsuarioVar.length <= 1) {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+                "(Insira um nome maior que 1 letra)";
+            finalizarAguardar();
+            return false;
+
+        } else if (senhaVar.length < 6) {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+                "(Senha deve ser maior ou igual a 6 digitos)";
+            finalizarAguardar();
+            return false;
+
+        } else if (senhaVar != confirmacaoSenhaVar) {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+                "(Senhas diferentes)";
+            finalizarAguardar();
+            return false;
+
+        } else if (cpfVar.length < 11) {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+                "(Digite um cnpj válido de até 11 digitos)";
+            finalizarAguardar();
+            return false;
+        } else if (emailVar != confirmacaoEmailVar) {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+                "(Os E-mails não coincidem)";
+            finalizarAguardar();
+            return false;
+        } else {
+            setInterval(sumirMensagem, 5000);
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeUsuarioServer: nomeUsuarioVar,
+                cpfServer: cpfVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    cardErro.style.display = "block";
+
+                    mensagem_erro.innerHTML =
+                        "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                    setTimeout(() => {
+                        window.location = "login.html";
+                    }, "2000");
+
+                    limparFormulario();
+                    finalizarAguardar();
+                } else {
+                    throw "Houve um erro ao tentar realizar o cadastro!";
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                finalizarAguardar();
+            });
+
+        return false;
+    }
+
+    function listarUsuarios() {
+        fetch("/usuarios/listarUsuarios", {
+            method: "GET",
+        })
+            .then(function (resposta) {
+                resposta.json().then((Selecionar_Plano) => {
+                    Selecionar_Plano.forEach((usuarios) => {
+                        selecionar_usuario_input.innerHTML += `<option value='${usuarios.idUsuario}'>${usuarios.nomeUser}</option>`;
+                    });
+                });
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none";
+    }
+
+    function ajuda() {
+        alert(`Caso tenha duvida de qual plano contratar é só voltar para pagina "Home" e ir em "Calculadora"`);
+    }
+</script>
