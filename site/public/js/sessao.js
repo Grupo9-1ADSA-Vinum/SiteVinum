@@ -14,6 +14,19 @@ function validarSessao() {
         window.location = "../login.html";
     }
 }
+function validarSessaoUsuario() {
+    var email = sessionStorage.EMAIL_USUARIO;
+    var senha = sessionStorage.SENHA_USUARIO;
+   
+
+    var b_usuario = document.getElementById("b_usuario");
+    var b_cnpj_usuario = document.getElementById("b_cnpj_usuario");
+
+    if (email != null && senha != null) {
+        b_usuario.innerHTML = senha;
+        b_cnpj_usuario.innerHTML = cnpj;
+    }
+}
 
 function limparSessao() {
     sessionStorage.clear();

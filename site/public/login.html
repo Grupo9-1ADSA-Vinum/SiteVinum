@@ -246,8 +246,8 @@
 
         //         if (resposta.status == 201) {
         //             resposta.json().then(res => {
-        //                 sessionStorage.setItem('idUsuario', res[0].idUsuario);
-        //                 sessionStorage.setItem('nomeUsuario', res[0].nomeUsuario);
+        //                 Storage.setItem('idUsuario', res[0].idUsuario);
+        //                 Storage.setItem('nomeUsuario', res[0].nomeUsuario);
         //                 window.location = 'dashboard.html';
         //             })
 
@@ -278,7 +278,7 @@
                 resposta.json().then(res => {
                     sessionStorage.setItem('email', res[0].email);
                     sessionStorage.setItem('senha', res[0].senha);
-
+                    sessionStorage.setItem('empresa', res[0].idDistribuidora)
                     setTimeout(function () {
                         window.location = "dashboard.html";
                     }, 1200); // apenas para exibir o loading

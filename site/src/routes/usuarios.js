@@ -16,7 +16,11 @@ router.post("/cadastrarUsuario", function (req, res) {
     usuarioController.cadastrarUsuario(req, res);
 })
 
-router.get("/listarUsuarios", function (req, res) {
+router.get("/listarUsuarios/:empresa", function (req, res) {
     usuarioController.listarUsuarios(req, res);
 })
+router.get("/deletarFuncionario/:funcionario", function (req, res) {
+    usuarioController.deletarFuncionario(req, res);
+})
+
 module.exports = router;

@@ -2,11 +2,18 @@ var usuarioModel = require("../models/usuarioModel");
 var aquarioModel = require("../models/aquarioModel");
 
 function listarUsuarios(req, res) {
-    usuarioModel.listarUsuarios().then((resultado) => {
-      res.status(200).json(resultado);
+    var empresa = req.params.empresa
+    usuarioModel.listarUsuarios(empresa).then((resultado) => {
+        res.status(200).json(resultado);
     });
-  }
+}
 
+function deletarFuncionario(req, res) {
+    var funcionario = req.params.funcionario
+    usuarioModel.deletarFuncionario(funcionario).then((resultado) => {
+        res.status(200).json(resultado);
+    });
+}
 function autenticar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
@@ -58,30 +65,31 @@ function autenticar(req, res) {
 
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var nome = req.body.nomeFantasiaServer;
-    var celular = req.body.celularServer;f
+    var nome = req.body.nomeUsuarioServer;
+    var celular = req.body.celularServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
-    var empresaId = req.body.empresaServer;
-    var cnpj = req.body.cnpjServer;
+    var empresaId = req.body.idEmpresaServer;
+    var cpf = req.body.cpfServer;
 
     // Faça as validações dos valores
     if (nome == undefined) {
         res.status(400).send("Seu nome está undefined!");
-    } else if (celular == undefined) {
-        res.status(400).send("Seu Celular está undefined!");
-    }else if (email == undefined) {
+    } // else if (celular == undefined) {
+    //     res.status(400).send("Seu Celular está undefined!");
+    // }
+    else if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
     } else if (empresaId == undefined) {
         res.status(400).send("Sua empresa está undefined!");
-    } else if (cnpj == undefined) {
-        res.status(400).send("Seu cnpj está undefined!");
-    }  else {
+    } else if (cpf == undefined) {
+        res.status(400).send("Seu cpf está undefined!");
+    } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, celular, email, senha, empresaId, cnpj)
+        usuarioModel.cadastrar(nome, email, senha, empresaId, cpf)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -103,4 +111,5 @@ module.exports = {
     autenticar,
     cadastrar,
     listarUsuarios,
+    deletarFuncionario
 }
