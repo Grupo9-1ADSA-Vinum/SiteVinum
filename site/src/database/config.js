@@ -21,8 +21,8 @@ var sqlServerConfig = {
 var mySqlConfig = {
     host: "localhost",
     database: "VinumSprint3",
-    user: "root",
-    password: "130466"
+    user: "vinumAllGrupoLocal",
+    password: "grupoAll"
 };
 
 function executar(instrucao) {

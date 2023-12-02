@@ -1,5 +1,4 @@
 var usuarioModel = require("../models/usuarioModel");
-var aquarioModel = require("../models/aquarioModel");
 
 function listarUsuarios(req, res) {
     var empresa = req.params.empresa

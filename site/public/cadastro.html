@@ -292,7 +292,7 @@
             .then(function (resposta) {
                 resposta.json().then((planos) => {
                     planos.forEach((planos) => {
-                        select_plano_cadastro.innerHTML += `<option value='${planos.idAssinaturas}'>${planos.nomeAssinatura}</option>`;
+                        select_plano_cadastro.innerHTML += `<option value='${planos.idAssinaturas}'>${planos.nomePlano}</option>`;
                     });
                 });
             })

@@ -14,6 +14,7 @@ function validarSessao() {
         window.location = "../login.html";
     }
 }
+
 function validarSessaoUsuario() {
     var email = sessionStorage.EMAIL_USUARIO;
     var senha = sessionStorage.SENHA_USUARIO;

@@ -23,9 +23,13 @@ function cadastrar(nomeFantasia,razaoSocial, cnpj , telefone, email, plano, senh
 
   return database.executar(query);
 }
+
 function autenticar(email, senha) {
   var instrucao = `
-      SELECT idDistribuidora, nomeFantasia, CNPJ, telefone, email, fkAssinaturas, senha FROM distribuidora WHERE email = '${email}' AND senha = '${senha}';
+  select *
+  from sensor
+  join distribuidora on fkDistribuidora = idDistribuidora
+  WHERE email = '${email}' AND senha = '${senha}';
   `;
   console.log("Executando a instrução SQL: \n" + instrucao);
   return database.executar(instrucao);

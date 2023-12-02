@@ -46,8 +46,8 @@ function cadastrar(req, res) {
 }
 
 function autenticar(req, res) {
-  var senha = req.body.senhaServer;
   var email = req.body.emailServer;
+  var senha = req.body.senhaServer;
   
 
   if (email == undefined) {
@@ -62,7 +62,7 @@ function autenticar(req, res) {
           console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
           console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
 
-          if (resultadoAutenticar.length == 1) {
+          if (resultadoAutenticar.length > 0) {
             console.log(resultadoAutenticar);
 
             empresaModel.autenticar(resultadoAutenticar[0].email, resultadoAutenticar[0].senha)

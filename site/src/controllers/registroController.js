@@ -1,14 +1,16 @@
-var medidaModel = require("../models/medidaModel");
+var registroModel = require("../models/registroModel");
 
-function buscarUltimasMedidas(req, res) {
+function buscarUltimosRegistros(req, res) {
 
     const limite_linhas = 7;
 
-    var idAquario = req.params.idAquario;
+    var fkSensor = req.params.fkSensor;
+
+    var fkDistribuidora= req.params.fkDistribuidora;
 
     console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
 
-    medidaModel.buscarUltimasMedidas(idAquario, limite_linhas).then(function (resultado) {
+    registroModel.buscarUltimosRegistros(fkSensor, fkDistribuidora, limite_linhas).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -24,11 +26,11 @@ function buscarUltimasMedidas(req, res) {
 
 function buscarMedidasEmTempoReal(req, res) {
 
-    var idAquario = req.params.idAquario;
+    var fkSensor = req.params.fkSensor;
 
     console.log(`Recuperando medidas em tempo real`);
 
-    medidaModel.buscarMedidasEmTempoReal(idAquario).then(function (resultado) {
+    registroModel.buscarMedidasEmTempoReal(fkSensor).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -41,8 +43,16 @@ function buscarMedidasEmTempoReal(req, res) {
     });
 }
 
-module.exports = {
-    buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+function listar(req, res) {
+    var fkDistribuidora = req.params.fkDistribuidora;
 
+    registroModel.listar(fkDistribuidora).then((resultado) => {
+      res.status(200).json(resultado);
+    });
+}
+
+module.exports = {
+    buscarUltimosRegistros,
+    buscarMedidasEmTempoReal,
+    listar
 }

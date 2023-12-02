@@ -228,11 +228,12 @@
 
 <script>
 
+    var valor = 0;
+
     function entrar() {
 
         var emailVar = input_email.value;
         var senhaVar = input_senha.value;
- 
 
         fetch("/empresas/autenticar", {
             method: "POST",
@@ -250,12 +251,20 @@
                 console.log(resposta);
 
                 resposta.json().then(res => {
+                    sessionStorage.setItem('nomeDistribuidora', res[0].nomeFantasia);
                     sessionStorage.setItem('email', res[0].email);
-                    sessionStorage.setItem('senha', res[0].senha);
-                    sessionStorage.setItem('empresa', res[0].idDistribuidora)
+                    sessionStorage.setItem('idDistribuidora', res[0].idDistribuidora);
+
+                    for (var posicao = 0; posicao < res.length; posicao ++) {
+                        sessionStorage.setItem(`idSensor${posicao+1}`, res[posicao].idSensor);
+                        sessionStorage.setItem(`nomeSensor${posicao+1}`, res[posicao].nomeSensor);
+                    }
+
+                    valor = sessionStorage.getItem("idSensor1");
+
                     setTimeout(function () {
                         window.location = "dashboard.html";
-                    }, 1200); // apenas para exibir o loading
+                    }, 1000); // apenas para exibir o loading
 
                 });
 
@@ -271,8 +280,6 @@
         }).catch(function (erro) {
             console.log(erro);
         })
-
-        return false;
     }
 
     function sumirMensagem() {
