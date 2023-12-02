@@ -95,7 +95,7 @@
 
             <div class="second-column">
 
-                <h2 class="title title-second">Login</h2>
+                <h2 class="title title-second">Login Usuario</h2>
 
                 <div class="social-media">
 
@@ -231,35 +231,8 @@
     function entrar() {
         var emailVar = input_email.value;
         var senhaVar = input_senha.value;
-        // fetch("/usuarios/autenticar", {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //     },
-        //     body: JSON.stringify({
-        //         nomeUsuarioServer: input_email,
-        //         senhaServer: input_senha
-        //     }),
-        // })
-        //     .then(function (resposta) {
 
-        //         if (resposta.status == 201) {
-        //             resposta.json().then(res => {
-        //                 sessionStorage.setItem('idUsuario', res[0].idUsuario);
-        //                 sessionStorage.setItem('nomeUsuario', res[0].nomeUsuario);
-        //                 window.location = 'dashboard.html';
-        //             })
-
-        //         } else {
-        //             resposta.text().then(texto => {
-        //                 alerta_erro.style.display = 'block';
-        //                 cardErro.style.display = 'flex';
-        //                 mensagem_erro.innerHTML = texto;
-        //             });
-        //         }
-        //     })    
-
-    fetch("/usuario/autenticar", {
+    fetch("/usuarios/autenticar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -271,7 +244,7 @@
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
 
-            if (resposta.status == 201) {
+            
                 console.log(resposta);
 
                 resposta.json().then(res => {
@@ -282,18 +255,6 @@
                     }, 1200); // apenas para exibir o loading
 
                 });
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
         })
 
         return false;

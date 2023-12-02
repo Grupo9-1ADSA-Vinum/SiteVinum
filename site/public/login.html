@@ -73,61 +73,61 @@
 
     </div>
     <div class="alerta_erro">
-    <div class="card_erro" id="cardErro">
-      <span id="mensagem_erro"></span>
-    </div>
-    <div class="container">
+        <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+        </div>
+        <div class="container">
 
-        <div class="content first-content">
+            <div class="content first-content">
 
-            <div class="first-column">
+                <div class="first-column">
 
-                <h2 class="title title-primary">Bem vindo de volta!</h2>
+                    <h2 class="title title-primary">Bem vindo de volta!</h2>
 
-                <p class="description description-primary">Caso não tenha uma conta</p>
+                    <p class="description description-primary">Caso não tenha uma conta</p>
 
-                <p class="description description-primary">clique aqui</p>
+                    <p class="description description-primary">clique aqui</p>
 
-                <a href="cadastro.html"><button id="signin"
-                        class="btn btn-primary">Cadastro</button></a>
-
-            </div>
-
-            <div class="second-column">
-
-                <h2 class="title title-second">Login</h2>
-
-                <div class="social-media">
+                    <a href="cadastro.html"><button id="signin" class="btn btn-primary">Cadastro</button></a>
+                    <a href="loginUsuario.html"><button id="signin" class="btn btn-primary">Login Usuario</button></a>
 
                 </div>
 
-                <div class="form">
+                <div class="second-column">
 
-                    <label class="label-input" for="">
+                    <h2 class="title title-second">Login Empresa</h2>
 
-                        <i class="far fa-envelope icon-modify"></i>
+                    <div class="social-media">
 
-                        <input id="input_email" type="email" placeholder="Email">
+                    </div>
 
-                    </label>
+                    <div class="form">
 
-                    <label class="label-input" for="">
+                        <label class="label-input" for="">
 
-                        <i class="fas fa-lock icon-modify"></i>
+                            <i class="far fa-envelope icon-modify"></i>
 
-                        <input id="input_senha" type="password" placeholder="Senha">
+                            <input id="input_email" type="email" placeholder="Email">
 
-                    </label>
+                        </label>
 
-                    <button onclick="entrar()" class="btn btn-second">login</button>
+                        <label class="label-input" for="">
+
+                            <i class="fas fa-lock icon-modify"></i>
+
+                            <input id="input_senha" type="password" placeholder="Senha">
+
+                        </label>
+
+                        <button onclick="entrar()" class="btn btn-second">login</button>
+
+                    </div>
 
                 </div>
 
             </div>
 
         </div>
-
-    </div>
 
     </div>
 
@@ -209,7 +209,7 @@
                             <img src="assets/imgs/icons8-facebook-48 1.png">
                             <img src="assets/imgs/icons8-instagram-48 1.png">
                             <a href="https://github.com/Vinum-Grupo8-1ADSA">
-                            <img src="assets/imgs/github (1).png"></a>
+                                <img src="assets/imgs/github (1).png"></a>
                         </div>
 
                     </div>
@@ -232,35 +232,9 @@
 
         var emailVar = input_email.value;
         var senhaVar = input_senha.value;
-        // fetch("/usuarios/autenticar", {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //     },
-        //     body: JSON.stringify({
-        //         nomeUsuarioServer: input_email,
-        //         senhaServer: input_senha
-        //     }),
-        // })
-        //     .then(function (resposta) {
+ 
 
-        //         if (resposta.status == 201) {
-        //             resposta.json().then(res => {
-        //                 Storage.setItem('idUsuario', res[0].idUsuario);
-        //                 Storage.setItem('nomeUsuario', res[0].nomeUsuario);
-        //                 window.location = 'dashboard.html';
-        //             })
-
-        //         } else {
-        //             resposta.text().then(texto => {
-        //                 alerta_erro.style.display = 'block';
-        //                 cardErro.style.display = 'flex';
-        //                 mensagem_erro.innerHTML = texto;
-        //             });
-        //         }
-        //     })    
-
-    fetch("/empresas/autenticar", {
+        fetch("/empresas/autenticar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -171,41 +171,41 @@
             cardErro.style.display = "block";
             mensagem_erro.innerHTML =
                 "(Mensagem de erro para todos os campos em branco)";
-                sumirMensagem()
+            sumirMensagem()
             return false;
 
         } else if (nomeUsuarioVar.length <= 1) {
             cardErro.style.display = "block";
             mensagem_erro.innerHTML =
                 "(Insira um nome maior que 1 letra)";
-                sumirMensagem()
+            sumirMensagem()
             return false;
 
         } else if (senhaVar.length < 6) {
             cardErro.style.display = "block";
             mensagem_erro.innerHTML =
                 "(Senha deve ser maior ou igual a 6 digitos)";
-                sumirMensagem()
+            sumirMensagem()
             return false;
 
         } else if (senhaVar != confirmacaoSenhaVar) {
             cardErro.style.display = "block";
             mensagem_erro.innerHTML =
                 "(Senhas diferentes)";
-                sumirMensagem()
+            sumirMensagem()
             return false;
 
         } else if (cpfVar.length < 11) {
             cardErro.style.display = "block";
             mensagem_erro.innerHTML =
                 "(Digite um cnpj válido de até 11 digitos)";
-                sumirMensagem()
+            sumirMensagem()
             return false;
         } else if (emailVar != confirmacaoEmailVar) {
             cardErro.style.display = "block";
             mensagem_erro.innerHTML =
                 "(Os E-mails não coincidem)";
-                sumirMensagem()
+            sumirMensagem()
             return false;
         } else {
             fetch("/usuarios/cadastrar", {
@@ -235,17 +235,17 @@
                 })
                 .catch(function (resposta) {
                     console.log(`#ERRO: ${resposta}`);
-    
+
                 });
 
             return false;
         }
     }
     function sumirMensagem() {
-    setTimeout(() => {
-        cardErro.style.display = "none"
-    }, 5000);
-}
+        setTimeout(() => {
+            cardErro.style.display = "none"
+        }, 5000);
+    }
     // Enviando o valor da nova input
 
     function listarUsuarios() {
@@ -271,8 +271,8 @@
         })
             .then(function (resposta) {
                 resposta.json().then((usuario) => {
-                        cardErro.style.display = "block"
-                        cardErro.innerHTML = "Usuario deletado com sucesso, atualize a tela para ver as alterações"
+                    cardErro.style.display = "block"
+                    cardErro.innerHTML = "Usuario deletado com sucesso, atualize a tela para ver as alterações"
                 });
             })
             .catch(function (resposta) {
