@@ -17,16 +17,16 @@ function buscarUltimosRegistros(fkSensor, fkDistribuidora, limite_linhas) {
     return database.executar(instrucaoSql);
 }
 
-function buscarMedidasEmTempoReal(fkSensor) {
+function buscarMedidasEmTempoReal(fkSensor, fkDistribuidora) {
 
     instrucaoSql = `
         select
             temperatura, 
             umidade,
-            DATE_FORMAT(dtHora,'%H:%i:%s') as momento_grafico, 
-            fkDistribuidora
+            DATE_FORMAT(dtHora,'%H:%i:%s') as momento_grafico
         from registro
-        where fkSensor = ${fkSensor} 
+        join sensor on fkSensor = idSensor
+        where fkSensor = ${fkSensor} and fkDistribuidora = ${fkDistribuidora}
         order by idRegistro desc limit 1;`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);

@@ -27,10 +27,11 @@ function buscarUltimosRegistros(req, res) {
 function buscarMedidasEmTempoReal(req, res) {
 
     var fkSensor = req.params.fkSensor;
+    var fkDistribuidora= req.params.fkDistribuidora;
 
     console.log(`Recuperando medidas em tempo real`);
 
-    registroModel.buscarMedidasEmTempoReal(fkSensor).then(function (resultado) {
+    registroModel.buscarMedidasEmTempoReal(fkSensor, fkDistribuidora).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {

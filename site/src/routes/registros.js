@@ -7,7 +7,7 @@ router.get("/ultimas/:fkSensor/:fkDistribuidora", function (req, res) {
     registroController.buscarUltimosRegistros(req, res);
 });
 
-router.get("/tempo-real/:fkSensor", function (req, res) {
+router.get("/tempo-real/:fkSensor/:fkDistribuidora", function (req, res) {
     registroController.buscarMedidasEmTempoReal(req, res);
 })
 
