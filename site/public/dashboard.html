@@ -18,7 +18,7 @@
             <h1 style="color: white;">Vinum</h1>
         </div>
         <div class="dropdown">
-            <img src="https://cdn.discordapp.com/attachments/962517269617991680/1174880251831128074/269dd16fa1f5ff51accd09e7e1602267.png?ex=65693380&is=6556be80&hm=9eaf11217a917c89ace9055495619f139a640699997eed86d4141d50150537b2&"
+            <img src="assets/imgs/github.png"
                 alt="">
             <div class="dropdown_conteudo">
                 <ul class="links">
@@ -32,9 +32,15 @@
         </div>
     </div>
 
-    </div>
+    <div class="grafico">
     <div id="exibir_grafico" class="main">
-
+    </div>
+    <div id="analytics">
+        <div id="bannerAnalytics">
+            <h1>Alertas</h1>
+            <div id="mensagemAlert">
+            </div>
+        </div>
     </div>
 
     </div>
@@ -139,7 +145,7 @@
             fkSensor = id_armazem.value;
 
             exibir_grafico.innerHTML = `
-            <canvas id="myChart">
+            <canvas id="myChart" display: block; box-sizing: border-box;">
             </canvas>
             `;
 
@@ -159,7 +165,12 @@
 
         //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
         //     Para ajustar o "select", ajuste o comando sql em src/models
+
+        
         function obterDadosGrafico(fkSensor) {
+            setTimeout(() => {
+
+            }, 2000)
             let proximaAtualizacao;
             if (proximaAtualizacao != undefined) {
                 clearTimeout(proximaAtualizacao);
@@ -181,30 +192,8 @@
                 .catch(function (error) {
                     console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
                 });
-
-            fetch(`/registros/todos/${fkDistribuidora}`, { cache: 'no-store' }).then(function (response) {
-                if (response.ok) {
-                    response.json().then(function (resposta) {
-                        console.log(`Todos os dados recebidos: ${JSON.stringify(resposta)}`);
-                        resposta.reverse();
-
-                        for (i = 0; i < resposta.length; i++) {
-                            var registro = resposta[i];
-                            if(registro.temperatura <= 10 || resgistro.umidade <= 50){
-                                alert(`Jonas: ${registro.nomeSensor}`)
-                                // Um card com a cor do nível do alerta, com o nome do alerta, a temperatura ou umidade que está ultrapassando algum parâmetro e o nome do Sensor que está tendo esse problema
-                            }
-                        }
-
-                    })
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-                .catch(function (error) {
-                    console.error(`Erro na obtenção de todos os dados p/ kpi: ${error.message}`);
-                });
         }
+        
         // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
         // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
         // A função *plotarGrafico* também invoca a função *atualizarGrafico*
@@ -324,6 +313,97 @@
 
                         // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
                         proximaAtualizacao = setTimeout(() => atualizarGrafico(fkSensor, dados, myChart), 1000);
+                        fetch(`/registros/todos/${fkDistribuidora}`, { cache: 'no-store' }).then(function (response) {
+                setInterval(() => {
+                    if (response.ok) {
+                    response.json().then(function (resposta) {
+                        console.log(`Todos os dados recebidos: ${JSON.stringify(resposta)}`);
+                        resposta.reverse();
+                        mensagemAlert.innerHTML = "";
+                        for (i = 0; i < resposta.length; i++) {
+                            var registro = resposta[i];
+                            if(registro.temp <= 4){
+                                mensagemAlert.style.display ="flex";
+                                mensagemAlert.innerHTML =
+                                `<div class="teste minCritico">
+                                <p>${registro.nomeSensor}</p><br>
+                                <p>Temperatura: ${registro.temp}</p>
+                                </div>
+                                `
+                                // Um card com a cor do nível do alerta, com o nome do alerta, a temperatura ou umidade que está ultrapassando algum parâmetro e o nome do Sensor que está tendo esse problema
+                            } else if(registro.temp <= 5){
+                                mensagemAlert.style.display ="flex";
+                                mensagemAlert.innerHTML += 
+                                `<div class="teste minEmergencia">
+                                    <p>${registro.nomeSensor} </p>
+                                    <p> Temperatura: ${registro.temp}</p>
+                                    <p>Horario: ${registro.momento_grafico}</p><br>
+                                 </div>
+                                `
+                            //Temperatura = 13
+                            } else if(registro.temp <= 6.5){
+                                mensagemAlert.style.display ="flex";
+                                mensagemAlert.innerHTML +=
+                                `<div class="teste minAlerte">
+                                    <p>${registro.nomeSensor} </p>
+                                    <p> Temperatura: ${registro.temp}</p>
+                                    <p>Horario: ${registro.momento_grafico}</p><br>
+                                 </div>
+                                `
+                            }
+                             else if(registro.temp >= 13.6){
+                                mensagemAlert.style.display ="flex";
+                                mensagemAlert.innerHTML +=
+                                 `<div class="teste maxAlert">
+                                    <p>${registro.nomeSensor} </p>
+                                    <p> Temperatura: ${registro.temp}</p>
+                                    <p>Horario: ${registro.momento_grafico}</p><br>
+                                 </div>
+                                 `   
+                            } else if(registro.temp >= 16){
+                                mensagemAlert.style.display ="flex";
+                                mensagemAlert.innerHTML +=
+                                `<div class="teste maxEmergencia">
+                                    <p>${registro.nomeSensor} </p>
+                                    <p> Temperatura: ${registro.temp}</p>
+                                    <p>Horario: ${registro.momento_grafico}</p><br>
+                                 </div>
+                                `
+                            
+                            } else if(registro.temp >= 18){
+                                mensagemAlert.style.display ="flex";
+                                mensagemAlert.innerHTML +=
+                                `<div class="teste maxCritico">
+                                    <p>${registro.nomeSensor} </p>
+                                    <p> Temperatura: ${registro.temp}</p>
+                                    <p>Horario: ${registro.momento_grafico}</p><br>
+                                 </div>
+                                `
+                            }
+                            // if(registro.umidade <= 38,7){
+                            //     alert("critico")
+                            // } else if(registro.umidade <= 45.3){
+                            //     alert("emergencia")
+                            // } else if(registro.umidade <= 50){
+                            //     alert("alerta")
+                            // } else if(registro.umidade >= 72){
+                            //     alert("alerta")
+                            // } else if(registro.umidade >= 76){
+                            //     alert("emergencia")
+                            // } else if (registro.umidade >= 80){
+                            //     alert("critico")
+                            // }
+                        }
+
+                    })
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+                }, 200);
+            })
+                .catch(function (error) {
+                    console.error(`Erro na obtenção de todos os dados p/ kpi: ${error.message}`);
+                });
                     });
                 } else {
                     console.error('Nenhum dado encontrado ou erro na API');

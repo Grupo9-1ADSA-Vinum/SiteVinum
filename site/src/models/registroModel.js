@@ -20,7 +20,7 @@ function buscarTodosUltimosRegistros(fkDistribuidora, limite_linhas2) {
 
     instrucaoSql = `
         select
-            temperatura, 
+            temperatura as temp, 
             umidade,
             nomeSensor,
             dtHora,
