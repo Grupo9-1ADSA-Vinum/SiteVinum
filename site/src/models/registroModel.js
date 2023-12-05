@@ -16,6 +16,23 @@ function buscarUltimosRegistros(fkSensor, fkDistribuidora, limite_linhas) {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+function buscarTodosUltimosRegistros(fkDistribuidora, limite_linhas2) {
+
+    instrucaoSql = `
+        select
+            temperatura, 
+            umidade,
+            nomeSensor,
+            dtHora,
+            DATE_FORMAT(dtHora,'%H:%i:%s') as momento_grafico
+        from registro
+        join sensor on fkSensor = idSensor
+        where fkDistribuidora = ${fkDistribuidora}
+        order by idRegistro desc limit ${limite_linhas2};`;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
 function buscarMedidasEmTempoReal(fkSensor, fkDistribuidora) {
 
@@ -46,5 +63,6 @@ function listar(fkDistribuidora) {
 module.exports = {
     buscarUltimosRegistros,
     buscarMedidasEmTempoReal,
-    listar
+    listar,
+    buscarTodosUltimosRegistros
 }

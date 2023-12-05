@@ -15,4 +15,8 @@ router.get("/listar/:fkDistribuidora", function (req, res) {
     registroController.listar(req, res);
 });
 
+router.get("/todos/:fkDistribuidora", function (req, res) {
+    registroController.buscarTodosUltimosRegistros(req, res);
+});
+
 module.exports = router;
