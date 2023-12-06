@@ -641,7 +641,8 @@ input:-webkit-autofill {
     display: none;
     position: absolute;
     background-color: #fff;
-    width: 160px;
+    width: 125px;
+    height: 127px;
     z-index: 2;
 }
 
@@ -651,6 +652,10 @@ input:-webkit-autofill {
 
 .dropdown:hover .dropdown_conteudo{
     display: block;
+    text-align: center;
+    height: 127px;
+    margin-bottom: 5px;
+    width: 100px;
 }
 
 .container1 {

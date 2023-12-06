@@ -20,16 +20,16 @@
             <h1 style="color: white;">Vinum</h1>
         </div>
         <div class="dropdown">
-            <img src="https://cdn.discordapp.com/attachments/962517269617991680/1174880251831128074/269dd16fa1f5ff51accd09e7e1602267.png?ex=65693380&is=6556be80&hm=9eaf11217a917c89ace9055495619f139a640699997eed86d4141d50150537b2&"
-                alt="">
+            <img src="assets/imgs/1975845.png"
+                alt="" style="width: 70px; height: 70px;">
             <div class="dropdown_conteudo">
                 <ul class="links">
-                    <li><a href="hero">Home</a></li>
-                    <li><a href="about">About</a></li>
-                    <li><a href="sevices">Services</a></li>
-                    <li><a href="contact">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Sobre</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="index.html">Contato</a></li>
                 </ul>
-                <a href="login.html" class="action_btn">Sair</a>
+                <a onclick="limparSessao()" class="action_btn">Sair</a>
             </div>
         </div>
     </div>
@@ -147,8 +147,7 @@
 
 </html>
 <script>
-    sessionStorage.empresa
-    var empresaVar = sessionStorage.empresa;
+    var empresaVar = sessionStorage.getItem('idDistribuidora');
     function cadastrarUsuarios() {
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
@@ -220,7 +219,7 @@
                     cpfServer: cpfVar,
                     emailServer: emailVar,
                     senhaServer: senhaVar,
-                    idEmpresaServer: empresaVar
+                    idDistribuidoraServer: empresaVar
                 }),
             })
                 .then(function (resposta) {
@@ -228,7 +227,7 @@
 
                     if (resposta.ok) {
                         cardErro.style.display = "block"
-                        mensagem_erro.innerHTML = "Funcionario cadastrado com sucesso!"
+                        mensagem_erro.innerHTML = "Funcionario cadastrado com sucesso!<br>Recarregue a página para visualizar"
                     } else {
                         throw "Houve um erro ao tentar realizar o cadastro!";
                     }
@@ -249,7 +248,7 @@
     // Enviando o valor da nova input
 
     function listarUsuarios() {
-        fetch(`/usuarios/listarUsuarios/${sessionStorage.empresa}`, {
+        fetch(`/usuarios/listarUsuarios/${sessionStorage.getItem('idDistribuidora')}`, {
             method: "GET",
         })
             .then(function (resposta) {

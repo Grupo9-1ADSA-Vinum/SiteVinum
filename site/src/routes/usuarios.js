@@ -12,10 +12,6 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
-router.post("/cadastrarUsuario", function (req, res) {
-    usuarioController.cadastrarUsuario(req, res);
-})
-
 router.get("/listarUsuarios/:empresa", function (req, res) {
     usuarioController.listarUsuarios(req, res);
 })

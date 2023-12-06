@@ -90,6 +90,7 @@
 
                 <a href="cadastro.html"><button id="signin"
                         class="btn btn-primary">Cadastro</button></a>
+                        <a href="login.html"><button id="signin" class="btn btn-primary">Login Empresa</button></a>
 
             </div>
 
@@ -243,13 +244,11 @@
             })
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
-
-            
                 console.log(resposta);
-
                 resposta.json().then(res => {
-                    sessionStorage.setItem('email', res[0].email);
-                    sessionStorage.setItem('senha', res[0].senha);
+                    sessionStorage.setItem('email', res.email);
+                    sessionStorage.setItem('senha', res.senha);
+                    sessionStorage.setItem('senha', res.senha);
                     setTimeout(function () {
                         window.location = "dashboard.html";
                     }, 1200); // apenas para exibir o loading

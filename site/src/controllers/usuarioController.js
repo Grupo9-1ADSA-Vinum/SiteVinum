@@ -13,6 +13,7 @@ function deletarFuncionario(req, res) {
         res.status(200).json(resultado);
     });
 }
+
 function autenticar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
@@ -59,7 +60,7 @@ function cadastrar(req, res) {
     var celular = req.body.celularServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
-    var empresaId = req.body.idEmpresaServer;
+    var fkDistribuidora = req.body.idDistribuidoraServer;
     var cpf = req.body.cpfServer;
 
     // Faça as validações dos valores
@@ -72,14 +73,14 @@ function cadastrar(req, res) {
         res.status(400).send("Seu email está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
-    } else if (empresaId == undefined) {
+    } else if (fkDistribuidora == undefined) {
         res.status(400).send("Sua empresa está undefined!");
     } else if (cpf == undefined) {
         res.status(400).send("Seu cpf está undefined!");
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha, empresaId, cpf)
+        usuarioModel.cadastrar(nome, email, senha, fkDistribuidora, cpf)
             .then(
                 function (resultado) {
                     res.json(resultado);

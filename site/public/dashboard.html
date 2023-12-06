@@ -9,25 +9,27 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <script src="js/sessao.js"></script>
 </head>
 
 <body onload="listar()">
     <div class="header" style="background-color: #763A5A;">
         <div class="isolada">
-            <img src="assets/imgs/icons8-wine-glass-64 1.png" alt="">
+            <img src="assets/imgs/1975845.png" alt="">
             <h1 style="color: white;">Vinum</h1>
         </div>
         <div class="dropdown">
-            <img src="assets/imgs/github.png"
+            <img src="assets/imgs/1975845.png"
                 alt="">
             <div class="dropdown_conteudo">
                 <ul class="links">
-                    <li><a href="hero">Home</a></li>
-                    <li><a href="about">About</a></li>
-                    <li><a href="sevices">Services</a></li>
-                    <li><a href="contact">Contact</a></li>
-                </ul>
-                <a href="login.html" class="action_btn">Sair</a>
+                    <ul class="links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Sobre</a></li>
+                        <li><a href="cadastroUsuario.html">Cadastro de Funcionario</a></li>
+                        <li><a href="index.html">Contato</a></li>
+                    </ul>
+                    <a onclick="limparSessao()" class="action_btn">Sair</a>
             </div>
         </div>
     </div>
@@ -312,7 +314,7 @@
                         }
 
                         // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                        proximaAtualizacao = setTimeout(() => atualizarGrafico(fkSensor, dados, myChart), 1000);
+                        proximaAtualizacao = setTimeout(() => atualizarGrafico(fkSensor, dados, myChart), 2000);
                         fetch(`/registros/todos/${fkDistribuidora}`, { cache: 'no-store' }).then(function (response) {
                 setInterval(() => {
                     if (response.ok) {
@@ -324,10 +326,11 @@
                             var registro = resposta[i];
                             if(registro.temp <= 4){
                                 mensagemAlert.style.display ="flex";
-                                mensagemAlert.innerHTML =
+                                mensagemAlert.innerHTML +=
                                 `<div class="teste minCritico">
-                                <p>${registro.nomeSensor}</p><br>
+                                <p>${registro.nomeSensor}</p>
                                 <p>Temperatura: ${registro.temp}</p>
+                                <p>Horario: ${registro.momento_grafico}</p><br>
                                 </div>
                                 `
                                 // Um card com a cor do nível do alerta, com o nome do alerta, a temperatura ou umidade que está ultrapassando algum parâmetro e o nome do Sensor que está tendo esse problema
@@ -351,7 +354,7 @@
                                  </div>
                                 `
                             }
-                             else if(registro.temp >= 13.6){
+                             else if(registro.temp > 13.5 && registro.temp < 16){ 
                                 mensagemAlert.style.display ="flex";
                                 mensagemAlert.innerHTML +=
                                  `<div class="teste maxAlert">
@@ -360,7 +363,7 @@
                                     <p>Horario: ${registro.momento_grafico}</p><br>
                                  </div>
                                  `   
-                            } else if(registro.temp >= 16){
+                            } else if(registro.temp < 18 && registro.temp >= 16){
                                 mensagemAlert.style.display ="flex";
                                 mensagemAlert.innerHTML +=
                                 `<div class="teste maxEmergencia">
@@ -370,7 +373,7 @@
                                  </div>
                                 `
                             
-                            } else if(registro.temp >= 18){
+                            } else if(registro.temp >= 18) {
                                 mensagemAlert.style.display ="flex";
                                 mensagemAlert.innerHTML +=
                                 `<div class="teste maxCritico">
@@ -380,19 +383,65 @@
                                  </div>
                                 `
                             }
-                            // if(registro.umidade <= 38,7){
-                            //     alert("critico")
-                            // } else if(registro.umidade <= 45.3){
-                            //     alert("emergencia")
-                            // } else if(registro.umidade <= 50){
-                            //     alert("alerta")
-                            // } else if(registro.umidade >= 72){
-                            //     alert("alerta")
-                            // } else if(registro.umidade >= 76){
-                            //     alert("emergencia")
-                            // } else if (registro.umidade >= 80){
-                            //     alert("critico")
-                            // }
+                            if(registro.umidade <= 38.7){
+                                mensagemAlert.style.display ="flex";
+                                mensagemAlert.innerHTML +=
+                                `<div class="teste minCritico">
+                                <p>${registro.nomeSensor}</p>
+                                <p> Umidade: ${registro.umidade}</p>
+                                <p>Horario: ${registro.momento_grafico}</p><br>
+                                </div>
+                                `
+                                // Um card com a cor do nível do alerta, com o nome do alerta, a temperatura ou umidade que está ultrapassando algum parâmetro e o nome do Sensor que está tendo esse problema
+                            } else if(registro.umidade <= 45.3){
+                                mensagemAlert.style.display ="flex";
+                                mensagemAlert.innerHTML += 
+                                `<div class="teste minEmergencia">
+                                    <p>${registro.nomeSensor} </p>
+                                    <p> Umidade: ${registro.umidade}</p>
+                                    <p>Horario: ${registro.momento_grafico}</p><br>
+                                 </div>
+                                `
+                            //Umidade = 13
+                            } else if(registro.umidade <= 50){
+                                mensagemAlert.style.display ="flex";
+                                mensagemAlert.innerHTML +=
+                                `<div class="teste minAlerte">
+                                    <p>${registro.nomeSensor} </p>
+                                    <p> Umidade: ${registro.umidade}</p>
+                                    <p>Horario: ${registro.momento_grafico}</p><br>
+                                 </div>
+                                `
+                            }
+                             else if(registro.umidade > 71.9 && registro.umidade < 76){ 
+                                mensagemAlert.style.display ="flex";
+                                mensagemAlert.innerHTML +=
+                                 `<div class="teste maxAlert">
+                                    <p>${registro.nomeSensor} </p>
+                                    <p> Umidade: ${registro.umidade}</p>
+                                    <p>Horario: ${registro.momento_grafico}</p><br>
+                                 </div>
+                                 `   
+                            } else if(registro.umidade >= 76 && registro.umidade < 80){
+                                mensagemAlert.style.display ="flex";
+                                mensagemAlert.innerHTML +=
+                                `<div class="teste maxEmergencia">
+                                    <p>${registro.nomeSensor} </p>
+                                    <p> Umidade: ${registro.umidade}</p>
+                                    <p>Horario: ${registro.momento_grafico}</p><br>
+                                 </div>
+                                `
+                            
+                            } else if(registro.umidade >= 80) {
+                                mensagemAlert.style.display ="flex";
+                                mensagemAlert.innerHTML +=
+                                `<div class="teste maxCritico">
+                                    <p>${registro.nomeSensor} </p>
+                                    <p> Umidade: ${registro.umidade}</p>
+                                    <p>Horario: ${registro.momento_grafico}</p><br>
+                                 </div>
+                                `
+                            }
                         }
 
                     })
